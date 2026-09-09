@@ -9,10 +9,10 @@ function HotColdTable({ items }: { items: MenuItem[] }) {
         <thead>
           <tr className="border-b border-cocoa/15">
             <th className="sr-only">Bebida</th>
-            <th className="w-24 py-1.5 text-right font-display text-sm font-bold uppercase tracking-wide text-coffee sm:text-base">
+            <th className="w-24 py-1.5 text-right font-display text-base font-bold uppercase tracking-wide text-coffee">
               Caliente
             </th>
-            <th className="w-24 py-1.5 text-right font-display text-sm font-bold uppercase tracking-wide text-coffee sm:text-base">
+            <th className="w-24 py-1.5 text-right font-display text-base font-bold uppercase tracking-wide text-coffee">
               Frío
             </th>
           </tr>
@@ -20,18 +20,18 @@ function HotColdTable({ items }: { items: MenuItem[] }) {
         <tbody>
           {items.map((item) => (
             <tr key={item.name} className="border-b border-cocoa/8">
-              <td className="py-2.5 pr-4 text-[0.97rem] leading-snug">
+              <td className="py-2.5 pr-4 text-xl leading-snug">
                 {item.name}
                 {item.description ? (
-                  <p className="mt-0.5 text-[0.88rem] text-cocoa/60">
+                  <p className="mt-0.5 text-base text-cocoa/60">
                     {item.description}
                   </p>
                 ) : null}
               </td>
-              <td className="whitespace-nowrap py-2.5 text-right font-bold tabular-nums">
+              <td className="whitespace-nowrap py-2.5 text-right text-lg font-bold tabular-nums">
                 {item.hot ?? ""}
               </td>
-              <td className="whitespace-nowrap py-2.5 text-right font-bold tabular-nums">
+              <td className="whitespace-nowrap py-2.5 text-right text-lg font-bold tabular-nums">
                 {item.cold ?? ""}
               </td>
             </tr>
@@ -51,7 +51,7 @@ export function MenuGroupView({ group }: { group: MenuGroup }) {
       return (
         <>
           {group.subtitleLines.map((line) => (
-            <p key={line} className="mb-2 text-center text-base text-cocoa/80">
+            <p key={line} className="mb-2 text-center text-lg text-cocoa/80">
               {line}
             </p>
           ))}
@@ -86,11 +86,11 @@ export function MenuGroupView({ group }: { group: MenuGroup }) {
     >
       {hasTitle && (
         <div className="mt-10 rounded-2xl border border-sage bg-sage/30 p-5 pt-4">
-          <h2 className="text-center font-display text-2xl font-bold tracking-wide text-menu-green sm:text-3xl">
+          <h2 className="text-center font-display text-3xl font-bold tracking-wide text-menu-green sm:text-4xl">
             {group.title}
           </h2>
           {group.subtitle && (
-            <p className="mt-1 text-center text-[0.93rem] text-cocoa/70">
+            <p className="mt-1 text-center text-lg text-cocoa/70">
               {group.subtitle}
             </p>
           )}
@@ -105,7 +105,7 @@ export function MenuGroupView({ group }: { group: MenuGroup }) {
       )}
 
       {group.note && (
-        <p className="mt-3 text-[0.88rem] italic text-cocoa/60">
+        <p className="mt-3 text-sm italic text-cocoa/60">
           {group.note}
         </p>
       )}

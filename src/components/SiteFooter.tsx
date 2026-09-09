@@ -18,25 +18,25 @@ export function SiteFooter() {
               href={a.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 rounded-full border border-menu-green/30 bg-menu-green/5 px-5 py-3 text-center font-display text-sm font-bold uppercase tracking-wide text-menu-green transition-colors hover:bg-menu-green hover:text-cream hover:border-menu-green"
+              className="flex-1 rounded-full border border-menu-green/30 bg-menu-green/5 px-5 py-3 text-center font-display text-lg font-bold uppercase tracking-wide text-menu-green transition-colors hover:bg-menu-green hover:text-cream hover:border-menu-green"
             >
               {a.label}
             </a>
           ))}
         </div>
 
-        <p className="mt-4 text-center text-xs text-cocoa/50">
+        <p className="mt-4 text-center text-sm text-cocoa/50">
           Cl. 70 #3-63, Cartagena · Lun–Dom 7:00am – 9:00pm · 314 634 3249
         </p>
 
-        <p className="mt-4 text-center text-[0.7rem] leading-relaxed text-cocoa/35">
+        <p className="mt-4 text-center text-sm leading-relaxed text-cocoa/35">
           Todos los precios incluyen el impoconsumo del 8%. Se sugiere una
           propina voluntaria del 10% sobre el valor total de la cuenta. Todas
           las propinas se reparten en partes iguales para el personal de la
           panadería. Es decisión del consumidor pagar o no el valor de la
           propina voluntaria.
         </p>
-        <p className="mt-1 text-center text-[0.7rem] leading-relaxed text-cocoa/35">
+        <p className="mt-1 text-center text-sm leading-relaxed text-cocoa/35">
           Ante cualquier inconveniente con el cobro de la propina, puede
           comunicarse con la Superintendencia de Industria y Comercio a través
           de sus canales de atención telefónica o por el correo institucional

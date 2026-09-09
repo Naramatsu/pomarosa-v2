@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { MENU_SECTIONS } from "@/data/menu";
 
 const linkBase =
-  "block w-full rounded-xl px-4 py-3 text-left font-display text-lg font-bold tracking-wide transition-colors duration-150";
+  "block w-full rounded-xl px-4 py-3 text-left font-display text-xl font-bold tracking-wide transition-colors duration-150";
 
 function DrawerLeaf() {
   return (
@@ -52,9 +53,16 @@ export function SiteHeader() {
         <div className="mx-auto flex h-14 w-full max-w-2xl items-center justify-between px-4">
           <Link
             href="/"
-            className="font-display text-xl font-black tracking-wide text-menu-green"
+            className="flex items-center"
           >
-            PomaRosa
+            <Image
+              src="/logo.webp"
+              alt="PomaRosa"
+              width={40}
+              height={40}
+              priority
+              className="rounded-full"
+            />
           </Link>
           {/* Desktop inline nav */}
           <nav aria-label="Menú" className="hidden lg:block">
@@ -63,7 +71,7 @@ export function SiteHeader() {
                 <li key={s.slug}>
                   <Link
                     href={`/${s.slug}`}
-                    className={`rounded-lg px-2.5 py-1 text-sm font-bold tracking-wide transition-colors duration-150 hover:bg-menu-green hover:text-cream ${
+                    className={`rounded-lg px-2.5 py-1 text-base font-bold tracking-wide transition-colors duration-150 hover:bg-menu-green hover:text-cream ${
                       pathname === `/${s.slug}`
                         ? "bg-menu-green text-cream"
                         : "text-menu-green-dark"
@@ -124,7 +132,7 @@ export function SiteHeader() {
         }`}
       >
         <div className="flex h-14 items-center justify-between border-b border-cocoa/10 px-4">
-          <span className="font-display text-lg font-black tracking-wide text-menu-green">
+          <span className="font-display text-xl font-black tracking-wide text-menu-green">
             Menú
           </span>
           <button

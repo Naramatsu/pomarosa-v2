@@ -23,11 +23,11 @@ export function MenuSectionView({ section }: { section: MenuSection }) {
   return (
     <article className="mx-auto w-full max-w-2xl px-5 pb-16 pt-6 animate-fade-in-up">
       <header className="text-center">
-        <h1 className="font-display text-5xl font-black tracking-wide text-menu-green sm:text-6xl">
+        <h1 className="font-display text-6xl font-black tracking-wide text-menu-green sm:text-7xl">
           {section.title}
         </h1>
         {section.tagline && (
-          <p className="mt-2 font-display text-lg font-bold text-coffee">
+          <p className="mt-2 font-display text-xl font-bold text-coffee">
             {section.tagline}
           </p>
         )}
@@ -41,7 +41,7 @@ export function MenuSectionView({ section }: { section: MenuSection }) {
       {section.footnotes?.map((note) => (
         <p
           key={note.slice(0, 32)}
-          className="mt-8 border-t border-cocoa/10 pt-4 text-justify text-[0.78rem] leading-relaxed text-cocoa/55"
+          className="mt-8 border-t border-cocoa/10 pt-4 text-justify text-xs leading-relaxed text-cocoa/55"
         >
           {note}
         </p>
