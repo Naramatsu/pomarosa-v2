@@ -13,6 +13,8 @@ export interface MenuItem {
   hot?: string;
   /** Cafetería table: FRÍO column */
   cold?: string;
+  /** Product image filename in /public/menu/, e.g. "lattegrande.jpg" */
+  image?: string;
 }
 
 export interface MenuGroup {
@@ -48,14 +50,14 @@ export const MENU_SECTIONS: MenuSection[] = [
     groups: [
       {
         items: [
-          { name: "Te Chai latte", hot: "$ 13.000", cold: "$ 16.500" },
-          { name: "Milo", hot: "$ 12.000", cold: "$ 16.000" },
+          { name: "Te Chai latte", hot: "$ 13.000", cold: "$ 16.500", image: "techai.jpg" },
+          { name: "Milo", hot: "$ 12.000", cold: "$ 16.000", image: "milo.jpg" },
           { name: "Chocolate", hot: "$ 10.500" },
           { name: "Capuchino Caramel", hot: "$ 13.000", cold: "$ 18.500" },
-          { name: "Capuchino", hot: "$ 10.500", cold: "$ 15.500" },
+          { name: "Capuchino", hot: "$ 10.500", cold: "$ 15.500", image: "capuchinos.jpeg" },
           { name: "Café doble", hot: "$ 11.500", cold: "$ 12.500" },
-          { name: "Té Negro", hot: "$ 8.000" },
-          { name: "Latte", hot: "$ 10.500", cold: "$ 14.500" },
+          { name: "Té Negro", hot: "$ 8.000", image: "tenegro.jpg" },
+          { name: "Latte", hot: "$ 10.500", cold: "$ 14.500", image: "lattegrande.jpg" },
           { name: "Aromática de frutas", hot: "$ 8.500" },
           { name: "Americano", hot: "$ 8.000", cold: "$ 12.500" },
           {
@@ -76,8 +78,8 @@ export const MENU_SECTIONS: MenuSection[] = [
         title: "Para Acompañar",
         items: [
           { name: "Alfajor pequeño", price: "$ 4.000" },
-          { name: "Pan de chocolate", price: "$ 6.000" },
-          { name: "Pan jamón y queso", price: "$ 6.500" },
+          { name: "Pan de chocolate", price: "$ 6.000", image: "pandechocolate.jpg" },
+          { name: "Pan jamón y queso", price: "$ 6.500", image: "jamonyqueso.jpg" },
           { name: "Pan de tres quesos", price: "$ 7.500" },
           { name: "Pan Choco-Arándanos", price: "$ 8.500" },
           { name: "Galleta", price: "$ 9.500" },
@@ -115,7 +117,7 @@ export const MENU_SECTIONS: MenuSection[] = [
           { name: "Mango" },
           { name: "Mora" },
           { name: "Banano" },
-          { name: "Jugo de Naranja", price: "$ 12.000" },
+          {             name: "Jugo de Naranja", price: "$ 12.000", image: "jugonaranja.jpg" },
         ],
       },
       {
@@ -163,12 +165,14 @@ export const MENU_SECTIONS: MenuSection[] = [
             description:
               "Tocineta crocante, huevos revueltos o fritos, waffles ó pancakes con miel de maple y mantequilla",
             price: "$ 36.500",
+            image: "desayunoamericano.webp",
           },
           {
             name: "Sándwich de Huevo",
             description:
               "Omelette con queso mozzarella, tocineta crujiente y mayonesa de la casa, en pan ciabatta",
             price: "$ 22.000",
+            image: "sanduchedehuevo.jpeg",
           },
           {
             name: "Waffle ó Pancaques",
@@ -225,12 +229,14 @@ export const MENU_SECTIONS: MenuSection[] = [
             description:
               "Omelette con chorizo santarrosano, tomate, cebolla, jamón ahumado, queso mozzarella y tocineta. Acompañado de pan artesanal y mantequilla",
             price: "$ 28.000",
+            image: "huevosalvajes.jpg",
           },
           {
             name: "Campestres",
             description:
               "Omelette con espinaca y champiñones salteados, relleno de queso mozzarella. Acompañado de pan artesanal y mantequilla",
             price: "$ 29.900",
+            image: "huevoscampestres.jpeg",
           },
           {
             name: "Granjero",
@@ -244,8 +250,8 @@ export const MENU_SECTIONS: MenuSection[] = [
         title: "Porción de Huevos al Gusto",
         subtitle: "(3 unidades)",
         items: [
-          { name: "Revuelto ó fritos", price: "$ 9.800" },
-          { name: "Tomate y Cebolla", price: "$ 11.900" },
+          {             name: "Revuelto ó fritos", price: "$ 9.800", image: "huevosrevueltos.jpeg" },
+          {             name: "Tomate y Cebolla", price: "$ 11.900", image: "huevoscontomateycebolla.jpeg" },
           { name: "Espinaca", price: "$ 13.500" },
           { name: "Jamón y Queso", price: "$ 12.500" },
           { name: "Chorizo santarrosano", price: "$ 12.500" },
@@ -266,24 +272,28 @@ export const MENU_SECTIONS: MenuSection[] = [
             description:
               "Huevos revueltos ó fritos con pan artesanal de la casa, mantequilla + bebida*",
             price: "$ 22.000",
+            image: "desayunoexpress.jpg",
           },
           {
             name: "Sándwich",
             description:
               "En pan artesanal con mantequilla de perejil y ajo, jamón de cerdo, queso mozzarella y tomate fresco + bebida*",
             price: "$ 22.000",
+            image: "sanduche.jpeg",
           },
           {
             name: "Tradicional",
             description:
               "Huevos al gusto*, arepa asada de maíz o pan artesanal de la casa, mantequilla, queso mozzarella + bebida*",
             price: "$ 29.900",
+            image: "desayunotradicional.jpg",
           },
           {
             name: "Ranchero",
             description:
               "Huevos revueltos con tomate, cebolla y chorizo santarrosano. Acompañados de arepa de maíz con queso costeño y mantequilla + bebida*",
             price: "$ 34.500",
+            image: "desayunoranchero.jpg",
           },
         ],
       },
@@ -309,18 +319,21 @@ export const MENU_SECTIONS: MenuSection[] = [
             description:
               "Variedad de frutas de estación con semillas de chía",
             price: "$ 18.900",
+            image: "platodefruta.jpg",
           },
           {
             name: "Copa Parfait",
             description:
               "Yogurt griego sin azúcar, mermelada casera de frutos rojos, granola artesanal con nueces, coco y arándanos frescos",
             price: "$ 21.900",
+            image: "copaparfait.jpeg",
           },
           {
             name: "Tostada con Aguacate",
             description:
               "Tostada de pan de masa madre integral con puré de aguacate, omelette con tomates cherrys confitados y reducción de aceto balsámico",
             price: "$ 30.500",
+            image: "tostadadeaguacate.jpg",
           },
           {
             name: "Waffle Yuca",
@@ -342,6 +355,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             name: "Tradicional",
             description: "Con salsa de la casa y chantilly",
             price: "$ 21.900",
+            image: "waffleclasico.webp",
           },
           {
             name: "Caribe",
@@ -354,12 +368,14 @@ export const MENU_SECTIONS: MenuSection[] = [
             description:
               "Waffle bañado con Nutella y fresas frescas fileteadas",
             price: "$ 28.000",
+            image: "waffledenutella.jpeg",
           },
           {
             name: "Berries",
             description:
               "Salsa de frutos rojos con fresas y arándanos frescos",
             price: "$ 27.000",
+            image: "waffleberries.jpeg",
           },
         ],
       },
@@ -383,18 +399,21 @@ export const MENU_SECTIONS: MenuSection[] = [
             description:
               "Queso mozzarella, pomodoro, pepperoni y orégano",
             price: "$ 25.500",
+            image: "pizzapepperoni.jpeg",
           },
           {
             name: "Hawapepe",
             description:
               "Queso mozzarella, pomodoro, trocitos de piña dulce y pepperoni",
             price: "$ 25.500",
+            image: "pizzahawapepe.jpeg",
           },
           {
             name: "Mediterránea",
             description:
               "Queso mozzarella, pomodoro, champiñones, aceitunas, tomates secos, pesto y reducción balsámica",
             price: "$ 28.500",
+            image: "pizzamediterránea.jpg",
           },
           {
             name: "Pan Pizza (porción)",
