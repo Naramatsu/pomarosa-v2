@@ -46,6 +46,39 @@ export function MenuGroupView({ group }: { group: MenuGroup }) {
   const isHotColdTable = group.items.some((i) => i.hot ?? i.cold);
   const hasTitle = !!group.title;
 
+  const renderItems = () => {
+    if (group.subtitleLines?.length) {
+      return (
+        <>
+          {group.subtitleLines.map((line) => (
+            <p key={line} className="mb-2 text-center text-base text-cocoa/80">
+              {line}
+            </p>
+          ))}
+          {isHotColdTable ? (
+            <HotColdTable items={group.items} />
+          ) : (
+            <ul className="divide-y divide-cocoa/10">
+              {group.items.map((item) => (
+                <MenuItemRow key={item.name} item={item} />
+              ))}
+            </ul>
+          )}
+        </>
+      );
+    }
+    if (isHotColdTable) {
+      return <HotColdTable items={group.items} />;
+    }
+    return (
+      <ul className="divide-y divide-cocoa/10">
+        {group.items.map((item) => (
+          <MenuItemRow key={item.name} item={item} />
+        ))}
+      </ul>
+    );
+  };
+
   return (
     <section
       aria-label={group.title ?? "Productos"}
@@ -61,37 +94,13 @@ export function MenuGroupView({ group }: { group: MenuGroup }) {
               {group.subtitle}
             </p>
           )}
-          {group.subtitleLines?.map((line) => (
-            <p key={line} className="mt-1 text-center text-base text-cocoa/80">
-              {line}
-            </p>
-          ))}
-          <div className="mt-3">
-            {isHotColdTable ? (
-              <HotColdTable items={group.items} />
-            ) : (
-              <ul className="divide-y divide-cocoa/10">
-                {group.items.map((item) => (
-                  <MenuItemRow key={item.name} item={item} />
-                ))}
-              </ul>
-            )}
-          </div>
+          <div className="mt-3">{renderItems()}</div>
         </div>
       )}
 
       {!hasTitle && (
         <div className="mt-6 border-t border-cocoa/10 pt-4">
-          {group.subtitleLines?.map((line) => (
-            <p key={line} className="mb-2 text-center text-base text-cocoa/80">
-              {line}
-            </p>
-          ))}
-          <ul className="divide-y divide-cocoa/10">
-            {group.items.map((item) => (
-              <MenuItemRow key={item.name} item={item} />
-            ))}
-          </ul>
+          {renderItems()}
         </div>
       )}
 
