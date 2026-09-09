@@ -42,7 +42,7 @@ function HotColdTable({ items }: { items: MenuItem[] }) {
   );
 }
 
-export function MenuGroupView({ group }: { group: MenuGroup }) {
+export function MenuGroupView({ group, noBackground = false }: { group: MenuGroup; noBackground?: boolean }) {
   const isHotColdTable = group.items.some((i) => i.hot ?? i.cold);
   const hasTitle = !!group.title;
 
@@ -85,7 +85,7 @@ export function MenuGroupView({ group }: { group: MenuGroup }) {
       className="animate-fade-in-up"
     >
       {hasTitle && (
-        <div className="mt-10 rounded-2xl border border-sage bg-sage/30 p-5 pt-4">
+        <div className={`mt-10 rounded-2xl border border-sage p-5 pt-4 ${noBackground ? "" : "bg-sage/30"}`}>
           <h2 className="text-center font-display text-3xl font-bold tracking-wide text-menu-green sm:text-4xl">
             {group.title}
           </h2>

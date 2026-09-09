@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { BebidasFriasView } from "@/components/BebidasFriasView";
 import { MenuSectionView } from "@/components/MenuSectionView";
 import { MENU_SECTIONS, getSection } from "@/data/menu";
 
@@ -25,5 +26,10 @@ export default async function MenuPage({
   const { slug } = await params;
   const section = getSection(slug);
   if (!section) notFound();
+
+  if (slug === "bebidas-frias") {
+    return <BebidasFriasView section={section} />;
+  }
+
   return <MenuSectionView section={section} />;
 }
