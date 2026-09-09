@@ -47,42 +47,26 @@ export function SiteHeader() {
     };
   }, [open, close]);
 
+  const currentTitle =
+    MENU_SECTIONS.find((s) => pathname === `/${s.slug}`)?.title ?? "PomaRosa";
+
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-cocoa/10 bg-cream/95 backdrop-blur-md">
-        <div className="mx-auto flex h-14 w-full max-w-2xl items-center justify-between px-4">
-          <Link
-            href="/"
-            className="flex items-center"
-          >
+        <div className="relative mx-auto flex h-16 w-full max-w-2xl items-center justify-between px-4">
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo.webp"
               alt="PomaRosa"
-              width={40}
-              height={40}
+              width={52}
+              height={52}
               priority
               className="rounded-full"
             />
           </Link>
-          {/* Desktop inline nav */}
-          <nav aria-label="Menú" className="hidden lg:block">
-            <ul className="flex flex-wrap items-center gap-1">
-              {MENU_SECTIONS.map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={`/${s.slug}`}
-                    className={`rounded-lg px-2.5 py-1 text-base font-bold tracking-wide transition-colors duration-150 hover:bg-menu-green hover:text-cream ${
-                      pathname === `/${s.slug}`
-                        ? "bg-menu-green text-cream"
-                        : "text-menu-green-dark"
-                    }`}
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <span className="absolute left-1/2 -translate-x-1/2 font-display text-2xl font-black tracking-wide text-menu-green text-center leading-none">
+            {currentTitle}
+          </span>
           {/* Hamburger */}
           <button
             type="button"
@@ -90,9 +74,9 @@ export function SiteHeader() {
             aria-expanded={open}
             aria-controls="menu-drawer"
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-menu-green transition-colors hover:bg-menu-green/10 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-xl text-menu-green transition-colors hover:bg-menu-green/10"
           >
-            <span aria-hidden="true" className="relative block h-[18px] w-6">
+            <span aria-hidden="true" className="relative block h-4.5 w-6">
               <span
                 className={`absolute left-0 top-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
                   open ? "top-[7px] rotate-45" : ""
@@ -117,7 +101,7 @@ export function SiteHeader() {
       <div
         aria-hidden="true"
         onClick={close}
-        className={`fixed inset-0 z-40 bg-cocoa/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-cocoa/40 backdrop-blur-sm transition-opacity duration-300 ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
@@ -127,11 +111,11 @@ export function SiteHeader() {
         id="menu-drawer"
         aria-label="Secciones del menú"
         aria-hidden={!open}
-        className={`fixed inset-y-0 right-0 z-50 flex w-[82%] max-w-sm flex-col bg-cream shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed inset-y-0 right-0 z-50 flex w-[82%] max-w-sm flex-col bg-cream shadow-2xl transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-14 items-center justify-between border-b border-cocoa/10 px-4">
+        <div className="flex h-16 items-center justify-between border-b border-cocoa/10 px-4">
           <span className="font-display text-xl font-black tracking-wide text-menu-green">
             Menú
           </span>
