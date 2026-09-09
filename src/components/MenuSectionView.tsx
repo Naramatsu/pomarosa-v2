@@ -1,4 +1,5 @@
 import type { MenuSection } from "@/data/menu";
+import { useLocale } from "next-intl";
 import { MenuGroupView } from "./MenuGroupView";
 
 function LeafOrnament() {
@@ -20,15 +21,18 @@ function LeafOrnament() {
 
 /** Full menu page body: huge green title, tagline, groups, footnotes. */
 export function MenuSectionView({ section }: { section: MenuSection }) {
+  const locale = useLocale();
+  const isEn = locale === "en";
+
   return (
     <article className="mx-auto w-full max-w-2xl px-5 pb-16 pt-6 animate-fade-in-up">
       <header className="text-center">
         <h1 className="font-display text-6xl font-black tracking-wide text-menu-green sm:text-7xl">
-          {section.title}
+          {isEn ? section.title_en ?? section.title : section.title}
         </h1>
         {section.tagline && (
           <p className="mt-2 font-display text-xl font-bold text-coffee">
-            {section.tagline}
+            {isEn ? section.tagline_en ?? section.tagline : section.tagline}
           </p>
         )}
         <LeafOrnament />
@@ -38,14 +42,17 @@ export function MenuSectionView({ section }: { section: MenuSection }) {
         <MenuGroupView key={group.title ?? `group-${i}`} group={group} />
       ))}
 
-      {section.footnotes?.map((note) => (
-        <p
-          key={note.slice(0, 32)}
-          className="mt-8 border-t border-cocoa/10 pt-4 text-justify text-xs leading-relaxed text-cocoa/55"
-        >
-          {note}
-        </p>
-      ))}
+      {section.footnotes?.map((note, i) => {
+        const footnotes = isEn ? section.footnotes_en ?? section.footnotes : section.footnotes;
+        return (
+          <p
+            key={note.slice(0, 32)}
+            className="mt-8 border-t border-cocoa/10 pt-4 text-justify text-xs leading-relaxed text-cocoa/55"
+          >
+            {footnotes?.[i] ?? note}
+          </p>
+        );
+      })}
     </article>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 
@@ -7,6 +8,7 @@ import Image from "next/image";
 export function MenuImage({ src, alt }: { src: string; alt: string }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [loaded, setLoaded] = useState(false);
+  const t = useTranslations("UI");
 
   const open = useCallback(() => {
     dialogRef.current?.showModal();
@@ -29,7 +31,7 @@ export function MenuImage({ src, alt }: { src: string; alt: string }) {
         type="button"
         onClick={open}
         className="group relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-cocoa/10 bg-sage/20 transition-transform duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-menu-green/40"
-        aria-label={`Ver imagen de ${alt}`}
+        aria-label={t("verImagenDe", { name: alt })}
       >
         <Image
           src={`/menu/${src}`}
@@ -53,7 +55,7 @@ export function MenuImage({ src, alt }: { src: string; alt: string }) {
           <button
             type="button"
             onClick={close}
-            aria-label="Cerrar"
+            aria-label={t("cerrar")}
             className="absolute -top-1 -right-1 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 shadow-md transition-colors hover:bg-white"
           >
             <svg

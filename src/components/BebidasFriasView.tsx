@@ -1,4 +1,5 @@
 import type { MenuGroup, MenuSection } from "@/data/menu";
+import { useLocale } from "next-intl";
 import { MenuGroupView } from "./MenuGroupView";
 
 function LeafSprig({ className = "" }: { className?: string }) {
@@ -32,18 +33,23 @@ function JugosGroup({
 }: {
   group: MenuGroup;
 }) {
+  const locale = useLocale();
+  const isEn = locale === "en";
+  const title = isEn ? group.title_en ?? group.title : group.title;
+  const subtitleLines = isEn ? group.subtitleLines_en ?? group.subtitleLines : group.subtitleLines;
+
   return (
-    <section aria-label={group.title} className="animate-fade-in-up">
+    <section aria-label={title} className="animate-fade-in-up">
       <div className="mt-10 rounded-2xl border border-sage bg-sage/30 p-5 pt-4">
         <div className="flex items-center justify-center gap-2">
           <LeafSprig />
           <h2 className="font-display text-3xl font-bold tracking-wide text-menu-green sm:text-4xl">
-            {group.title}
+            {title}
           </h2>
         </div>
-        {group.subtitleLines && (
+        {subtitleLines && (
           <div className="mt-3 flex flex-wrap justify-center gap-2">
-            {group.subtitleLines.map((line) => (
+            {subtitleLines.map((line) => (
               <span
                 key={line}
                 className="rounded-full border border-menu-green/20 bg-menu-green/8 px-4 py-1.5 text-sm font-bold text-menu-green"
@@ -59,13 +65,13 @@ function JugosGroup({
               key={item.name}
               className="rounded-full border border-cocoa/12 bg-cream/70 px-4 py-2 text-lg font-bold text-cocoa"
             >
-              {item.name}
+              {isEn ? item.name_en ?? item.name : item.name}
             </span>
           ))}
         </div>
       </div>
       {group.note && (
-        <p className="mt-3 text-sm italic text-cocoa/60">{group.note}</p>
+        <p className="mt-3 text-sm italic text-cocoa/60">{isEn ? group.note_en ?? group.note : group.note}</p>
       )}
     </section>
   );
@@ -90,22 +96,26 @@ function LeafOrnament() {
 
 /** Custom section view for Bebidas Frías — standard lists with special Jugos Naturales. */
 export function BebidasFriasView({ section }: { section: MenuSection }) {
+  const locale = useLocale();
+  const isEn = locale === "en";
+
   return (
     <article className="mx-auto w-full max-w-2xl px-5 pb-16 pt-6 animate-fade-in-up">
       <header className="text-center">
         <h1 className="font-display text-6xl font-black tracking-wide text-menu-green sm:text-7xl">
-          {section.title}
+          {isEn ? section.title_en ?? section.title : section.title}
         </h1>
         {section.tagline && (
           <p className="mt-2 font-display text-xl font-bold text-coffee">
-            {section.tagline}
+            {isEn ? section.tagline_en ?? section.tagline : section.tagline}
           </p>
         )}
         <LeafOrnament />
       </header>
 
       {section.groups.map((group, i) => {
-        const isJugos = group.title === "Jugos Naturales";
+        const groupTitle = isEn ? group.title_en ?? group.title : group.title;
+        const isJugos = groupTitle === "Jugos Naturales" || group.title === "Jugos Naturales";
         return (
           <div key={group.title ?? `group-${i}`}>
             {i > 0 && <LeafDivider />}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Playfair_Display } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
 import "./globals.css";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -16,15 +18,6 @@ const body = EB_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "PomaRosa · Menú — Panadería y Café en Cartagena",
-    template: "%s · PomaRosa",
-  },
-  description:
-    "Menú de PomaRosa: cafetería, bebidas frías, desayunos americanos, omelettes, combos, saludables, waffles con helado y pizzas. Cl. 70 #3-63, Cartagena.",
-};
-
 const bakeryJsonLd = {
   "@context": "https://schema.org",
   "@type": "Bakery",
@@ -40,24 +33,47 @@ const bakeryJsonLd = {
   sameAs: ["https://www.instagram.com/panaderiapomarosa"],
 };
 
-export default function RootLayout({
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Layout" });
+  return {
+    title: {
+      default: t("defaultTitle"),
+      template: "%s · PomaRosa",
+    },
+    description: t("metaDescription"),
+  };
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
     <html
-      lang="es"
+      lang={locale}
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-cream text-cocoa">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(bakeryJsonLd) }}
-        />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(bakeryJsonLd) }}
+          />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

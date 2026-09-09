@@ -1,0 +1,73 @@
+{
+  "Nav": {
+    "inicio": "Inicio",
+    "menu": "Menú",
+    "abrirMenu": "Abrir menú",
+    "cerrarMenu": "Cerrar menú",
+    "seccionesDelMenu": "Secciones del menú",
+    "drawerFooter": "Cl. 70 #3-63, Cartagena · 7:00am – 9:00pm"
+  },
+  "Home": {
+    "pageTitle": "Menú",
+    "tagline": "Panadería · Pastelería · Café",
+    "description": "Nuestro menú, sección por sección — toca una categoría para verla."
+  },
+  "Footer": {
+    "whatsapp": "WhatsApp",
+    "comoLlegar": "Cómo llegar",
+    "instagram": "Instagram",
+    "addressHours": "Cl. 70 #3-63, Cartagena · Lun–Dom 7:00am – 9:00pm · 314 634 3249",
+    "legalDisclaimer": "Todos los precios incluyen el impoconsumo del 8%. Se sugiere una propina voluntaria del 10% sobre el valor total de la cuenta. Todas las propinas se reparten en partes iguales para el personal de la panadería. Es decisión del consumidor pagar o no el valor de la propina voluntaria.",
+    "sicDisclaimer": "Ante cualquier inconveniente con el cobro de la propina, puede comunicarse con la Superintendencia de Industria y Comercio a través de sus canales de atención telefónica o por el correo institucional contactenos@sic.gov.co."
+  },
+  "Layout": {
+    "defaultTitle": "PomaRosa · Menú — Panadería y Café en Cartagena",
+    "metaDescription": "Menú de PomaRosa: cafetería, bebidas frías, desayunos americanos, omelettes, combos, saludables, waffles con helado y pizzas. Cl. 70 #3-63, Cartagena."
+  },
+  "NotFound": {
+    "title": "Sección no encontrada",
+    "description": "Esa parte del menú no existe — vuelve al inicio para verlo todo.",
+    "cta": "Ver el menú"
+  },
+  "Section": {
+    "cafeteria": "Cafetería",
+    "bebidasFrias": "Bebidas Frías",
+    "desayunoAmericano": "Desayuno Americano",
+    "omelettesEspeciales": "Omelettes Especiales",
+    "combos": "Combos",
+    "saludables": "Saludables",
+    "wafflesConHelado": "Waffles con Helado",
+    "pizza": "Pizza"
+  },
+  "Tagline": {
+    "combos": "De 7:00am a 12:00pm todos los días",
+    "pizzas": "Tamaño personal · 4 porciones"
+  },
+  "Group": {
+    "paraAcompanar": "Para Acompañar",
+    "limonadas": "Limonadas",
+    "jugosNaturales": "Jugos Naturales",
+    "embotellados": "Embotellados",
+    "sodas": "Sodas",
+    "agregaATuDesayuno": "Agrega a tu Desayuno",
+    "porcionDeHuevosAlGusto": "Porción de Huevos al Gusto"
+  },
+  "Subtitle": {
+    "unidades": "(3 unidades)",
+    "enAgua": "En agua  $ 11.000",
+    "enLeche": "En leche  $ 13.000"
+  },
+  "Footnote": {
+    "combos": "*Bebida a elección entre: café negro, café con leche, chocolate, agua ó coca-cola. Aplica restricciones, cualquier cambio tiene un costo adicional. Cambio: jugo frío en agua $ 4.500, en leche $ 5.500",
+    "pizzas1": "**Todos los precios incluyen el impoconsumo del 8% — se sugiere una propina voluntaria del 10% sobre el valor total de la cuenta. Todas las propinas se reparten en partes iguales para el personal de la panadería. Es decisión del consumidor pagar o no el valor de la propina voluntaria.**",
+    "pizzas2": "Ante cualquier inconveniente con el cobro de la propina, puede comunicarse con la Superintendencia de Industria y Comercio a través de sus canales de atención telefónica o por el correo institucional contactenos@sic.gov.co."
+  },
+  "UI": {
+    "caliente": "Caliente",
+    "frio": "Frío",
+    "bebida": "Bebida",
+    "productos": "Productos",
+    "verImagenDe": "Ver imagen de {name}",
+    "cerrar": "Cerrar"
+  }
+}

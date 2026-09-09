@@ -1,0 +1,73 @@
+{
+  "Nav": {
+    "inicio": "Home",
+    "menu": "Menu",
+    "abrirMenu": "Open menu",
+    "cerrarMenu": "Close menu",
+    "seccionesDelMenu": "Menu sections",
+    "drawerFooter": "Cl. 70 #3-63, Cartagena · 7:00am – 9:00pm"
+  },
+  "Home": {
+    "pageTitle": "Menu",
+    "tagline": "Bakery · Pastry · Coffee",
+    "description": "Our menu, section by section — tap a category to view it."
+  },
+  "Footer": {
+    "whatsapp": "WhatsApp",
+    "comoLlegar": "Get directions",
+    "instagram": "Instagram",
+    "addressHours": "Cl. 70 #3-63, Cartagena · Mon–Sun 7:00am – 9:00pm · 314 634 3249",
+    "legalDisclaimer": "All prices include the 8% consumption tax. A voluntary tip of 10% on the total bill is suggested. All tips are shared equally among the bakery staff. It is entirely up to the customer to decide whether or not to pay the voluntary tip.",
+    "sicDisclaimer": "If you have any issues regarding the tip charge, you may contact the Superintendency of Industry and Commerce through their telephone service channels or by email at contactenos@sic.gov.co."
+  },
+  "Layout": {
+    "defaultTitle": "PomaRosa · Menu — Bakery and Coffee in Cartagena",
+    "metaDescription": "PomaRosa menu: café, cold drinks, American breakfasts, omelettes, combos, healthy options, ice cream waffles and pizzas. Cl. 70 #3-63, Cartagena."
+  },
+  "NotFound": {
+    "title": "Section not found",
+    "description": "That part of the menu doesn't exist — go back to the home page to see everything.",
+    "cta": "View menu"
+  },
+  "Section": {
+    "cafeteria": "Café",
+    "bebidasFrias": "Cold Drinks",
+    "desayunoAmericano": "American Breakfast",
+    "omelettesEspeciales": "Special Omelettes",
+    "combos": "Combos",
+    "saludables": "Healthy",
+    "wafflesConHelado": "Ice Cream Waffles",
+    "pizza": "Pizza"
+  },
+  "Tagline": {
+    "combos": "From 7:00am to 12:00pm every day",
+    "pizzas": "Personal size · 4 slices"
+  },
+  "Group": {
+    "paraAcompanar": "To Accompany",
+    "limonadas": "Lemonades",
+    "jugosNaturales": "Natural Juices",
+    "embotellados": "Bottled",
+    "sodas": "Sodas",
+    "agregaATuDesayuno": "Add to your Breakfast",
+    "porcionDeHuevosAlGusto": "Eggs to Taste"
+  },
+  "Subtitle": {
+    "unidades": "(3 units)",
+    "enAgua": "With water  $ 11.000",
+    "enLeche": "With milk  $ 13.000"
+  },
+  "Footnote": {
+    "combos": "*Hot beverage of your choice: black coffee, coffee with milk, chocolate, water or coca-cola. Restrictions apply, any change has an additional cost. Upgrade: cold juice with water $ 4.500, with milk $ 5.500",
+    "pizzas1": "**All prices include the 8% consumption tax — a voluntary tip of 10% on the total bill is suggested. All tips are shared equally among the bakery staff. It is entirely up to the customer to decide whether or not to pay the voluntary tip.**",
+    "pizzas2": "If you have any issues regarding the tip charge, you may contact the Superintendency of Industry and Commerce through their telephone service channels or by email at contactenos@sic.gov.co."
+  },
+  "UI": {
+    "caliente": "Hot",
+    "frio": "Cold",
+    "bebida": "Drink",
+    "productos": "Products",
+    "verImagenDe": "View image of {name}",
+    "cerrar": "Close"
+  }
+}

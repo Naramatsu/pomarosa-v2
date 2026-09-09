@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 import { MENU_SECTIONS } from "@/data/menu";
+import { LocaleToggle } from "./LocaleToggle";
 
 const linkBase =
   "block w-full rounded-xl px-4 py-3 text-left font-display text-xl font-bold tracking-wide transition-colors duration-150";
@@ -29,6 +30,9 @@ function DrawerLeaf() {
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("Nav");
+  const tSection = useTranslations("Section");
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -47,53 +51,69 @@ export function SiteHeader() {
     };
   }, [open, close]);
 
-  const currentTitle =
-    MENU_SECTIONS.find((s) => pathname === `/${s.slug}`)?.title ?? "PomaRosa";
+  const sectionKey = MENU_SECTIONS.find((s) => pathname.endsWith(`/${s.slug}`))?.slug;
+  const currentTitle = sectionKey
+    ? tSection(sectionKey === "cafeteria" ? "cafeteria" : sectionKey === "bebidas-frias" ? "bebidasFrias" : sectionKey === "desayuno-americano" ? "desayunoAmericano" : sectionKey === "omelettes-especiales" ? "omelettesEspeciales" : sectionKey === "combos" ? "combos" : sectionKey === "saludables" ? "saludables" : sectionKey === "waffles-con-helado" ? "wafflesConHelado" : "pizza")
+    : "PomaRosa";
+
+  const sectionTitleMap: Record<string, string> = {
+    cafeteria: "cafeteria",
+    "bebidas-frias": "bebidasFrias",
+    "desayuno-americano": "desayunoAmericano",
+    "omelettes-especiales": "omelettesEspeciales",
+    combos: "combos",
+    saludables: "saludables",
+    "waffles-con-helado": "wafflesConHelado",
+    pizzas: "pizza",
+  };
 
   return (
     <>
       <header className="sticky top-0 z-40 border-b border-cocoa/10 bg-cream/95 backdrop-blur-md">
         <div className="relative mx-auto flex h-16 w-full max-w-2xl items-center justify-between px-4">
-          <Link href="/" className="flex items-center">
-            <Image
+          <Link href={`/${locale}`} className="flex items-center">
+            <img
               src="/logo.webp"
               alt="PomaRosa"
               width={52}
               height={52}
-              priority
+              loading="eager"
               className="rounded-full"
             />
           </Link>
           <span className="absolute left-1/2 -translate-x-1/2 font-display text-2xl font-black tracking-wide text-menu-green text-center leading-none">
             {currentTitle}
           </span>
-          {/* Hamburger */}
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="menu-drawer"
-            aria-label={open ? "Cerrar menú" : "Abrir menú"}
-            className="flex h-10 w-10 items-center justify-center rounded-xl text-menu-green transition-colors hover:bg-menu-green/10"
-          >
-            <span aria-hidden="true" className="relative block h-4.5 w-6">
-              <span
-                className={`absolute left-0 top-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
-                  open ? "top-[7px] rotate-45" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 top-[7px] h-[3px] w-full rounded-full bg-current transition-all duration-200 ${
-                  open ? "opacity-0 scale-x-0" : ""
-                }`}
-              />
-              <span
-                className={`absolute left-0 bottom-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
-                  open ? "top-[7px] -rotate-45" : ""
-                }`}
-              />
-            </span>
-          </button>
+          <div className="flex items-center gap-2">
+            <LocaleToggle />
+            {/* Hamburger */}
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="menu-drawer"
+              aria-label={open ? t("cerrarMenu") : t("abrirMenu")}
+              className="flex h-10 w-10 items-center justify-center rounded-xl text-menu-green transition-colors hover:bg-menu-green/10"
+            >
+              <span aria-hidden="true" className="relative block h-4.5 w-6">
+                <span
+                  className={`absolute left-0 top-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
+                    open ? "top-[7px] rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-[7px] h-[3px] w-full rounded-full bg-current transition-all duration-200 ${
+                    open ? "opacity-0 scale-x-0" : ""
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 bottom-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
+                    open ? "top-[7px] -rotate-45" : ""
+                  }`}
+                />
+              </span>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -109,7 +129,7 @@ export function SiteHeader() {
       {/* Drawer */}
       <nav
         id="menu-drawer"
-        aria-label="Secciones del menú"
+        aria-label={t("seccionesDelMenu")}
         aria-hidden={!open}
         className={`fixed inset-y-0 right-0 z-50 flex w-[82%] max-w-sm flex-col bg-cream shadow-2xl transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
@@ -117,12 +137,12 @@ export function SiteHeader() {
       >
         <div className="flex h-16 items-center justify-between border-b border-cocoa/10 px-4">
           <span className="font-display text-xl font-black tracking-wide text-menu-green">
-            Menú
+            {t("menu")}
           </span>
           <button
             type="button"
             onClick={close}
-            aria-label="Cerrar menú"
+            aria-label={t("cerrarMenu")}
             className="flex h-10 w-10 items-center justify-center rounded-xl text-menu-green transition-colors hover:bg-menu-green/10"
           >
             <span aria-hidden="true" className="relative block h-5 w-5">
@@ -137,24 +157,25 @@ export function SiteHeader() {
         <ul className="flex-1 space-y-1 overflow-y-auto px-3 py-2">
           <li>
             <Link
-              href="/"
+              href={`/${locale}`}
               onClick={close}
               tabIndex={open ? 0 : -1}
               className={`${linkBase} ${
-                pathname === "/"
+                pathname === `/${locale}`
                   ? "bg-menu-green text-cream"
                   : "text-cocoa hover:bg-menu-green/8"
               }`}
             >
-              Inicio
+              {t("inicio")}
             </Link>
           </li>
           {MENU_SECTIONS.map((s) => {
-            const active = pathname === `/${s.slug}`;
+            const active = pathname.endsWith(`/${s.slug}`);
+            const translationKey = sectionTitleMap[s.slug] ?? s.slug;
             return (
               <li key={s.slug}>
                 <Link
-                  href={`/${s.slug}`}
+                  href={`/${locale}/${s.slug}`}
                   onClick={close}
                   tabIndex={open ? 0 : -1}
                   aria-current={active ? "page" : undefined}
@@ -164,14 +185,14 @@ export function SiteHeader() {
                       : "text-cocoa hover:bg-menu-green/8"
                   }`}
                 >
-                  {s.title}
+                  {tSection(translationKey)}
                 </Link>
               </li>
             );
           })}
         </ul>
         <p className="border-t border-cocoa/10 px-4 py-3 text-center text-xs text-cocoa/50">
-          Cl. 70 #3-63, Cartagena · 7:00am – 9:00pm
+          {t("drawerFooter")}
         </p>
       </nav>
     </>

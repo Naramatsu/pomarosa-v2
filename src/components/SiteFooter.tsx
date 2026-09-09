@@ -1,13 +1,16 @@
+import { useTranslations } from "next-intl";
 import { INSTAGRAM_URL, MAPS_URL, WHATSAPP_URL } from "@/data/menu";
 
-const actions = [
-  { label: "WhatsApp", href: WHATSAPP_URL },
-  { label: "Cómo llegar", href: MAPS_URL },
-  { label: "Instagram", href: INSTAGRAM_URL },
-];
-
-/** Contact actions + address/hours footer (server component). */
+/** Contact actions + address/hours footer. */
 export function SiteFooter() {
+  const t = useTranslations("Footer");
+
+  const actions = [
+    { label: t("whatsapp"), href: WHATSAPP_URL },
+    { label: t("comoLlegar"), href: MAPS_URL },
+    { label: t("instagram"), href: INSTAGRAM_URL },
+  ];
+
   return (
     <footer className="border-t border-cocoa/10 bg-parchment/50">
       <div className="mx-auto w-full max-w-2xl px-5 py-8">
@@ -26,21 +29,14 @@ export function SiteFooter() {
         </div>
 
         <p className="mt-4 text-center text-sm text-cocoa/50">
-          Cl. 70 #3-63, Cartagena · Lun–Dom 7:00am – 9:00pm · 314 634 3249
+          {t("addressHours")}
         </p>
 
         <p className="mt-4 text-center text-sm leading-relaxed text-cocoa/35">
-          Todos los precios incluyen el impoconsumo del 8%. Se sugiere una
-          propina voluntaria del 10% sobre el valor total de la cuenta. Todas
-          las propinas se reparten en partes iguales para el personal de la
-          panadería. Es decisión del consumidor pagar o no el valor de la
-          propina voluntaria.
+          {t("legalDisclaimer")}
         </p>
         <p className="mt-1 text-center text-sm leading-relaxed text-cocoa/35">
-          Ante cualquier inconveniente con el cobro de la propina, puede
-          comunicarse con la Superintendencia de Industria y Comercio a través
-          de sus canales de atención telefónica o por el correo institucional
-          contactenos@sic.gov.co.
+          {t("sicDisclaimer")}
         </p>
       </div>
     </footer>
