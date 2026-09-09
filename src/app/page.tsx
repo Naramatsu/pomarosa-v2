@@ -1,69 +1,89 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { MENU_SECTIONS } from "@/data/menu";
+
+export const metadata: Metadata = {
+  title: "Menú",
+};
+
+function HeroLeaf() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 60 30"
+      className="mx-auto mt-3 h-6 w-12 text-menu-green/40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+    >
+      <path d="M10 25 Q20 5 30 15 Q40 5 50 25" />
+      <path d="M25 15 Q30 8 35 15" strokeWidth="0.8" />
+      <circle cx="30" cy="15" r="1.5" fill="currentColor" strokeWidth="0" />
+    </svg>
+  );
+}
+
+const categoryIcons: Record<string, string> = {
+  cafeteria: "☕",
+  "bebidas-frias": "🍋",
+  "desayuno-americano": "🍳",
+  "omelettes-especiales": "🥚",
+  combos: "🎒",
+  saludables: "🥗",
+  "waffles-con-helado": "🧇",
+  pizzas: "🍕",
+};
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="mx-auto w-full max-w-2xl px-5 pb-16 animate-fade-in-up">
+      <header className="pt-12 text-center">
+        <p className="font-display text-sm font-bold uppercase tracking-[0.3em] text-coffee">
+          Panadería · Pastelería · Café
+        </p>
+        <h1 className="mt-3 font-display text-6xl font-black tracking-wide text-menu-green sm:text-7xl">
+          PomaRosa
+        </h1>
+        <HeroLeaf />
+        <p className="mt-4 max-w-md mx-auto text-lg leading-relaxed text-cocoa/70">
+          Nuestro menú, sección por sección — toca una categoría para verla.
+        </p>
+      </header>
+
+      <nav aria-label="Secciones del menú" className="mt-10">
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {MENU_SECTIONS.map((s, i) => (
+            <li
+              key={s.slug}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${i * 60}ms` }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+              <Link
+                href={`/${s.slug}`}
+                className="group flex items-center gap-4 rounded-2xl border border-cocoa/10 bg-white/60 px-5 py-4 shadow-sm transition-all duration-200 hover:border-menu-green/40 hover:bg-menu-green hover:shadow-md hover:shadow-menu-green/10"
+              >
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sage/50 text-xl transition-colors duration-200 group-hover:bg-white/20"
+                  aria-hidden="true"
+                >
+                  {categoryIcons[s.slug] ?? "🍽"}
+                </span>
+                <span className="flex-1">
+                  <span className="block font-display text-lg font-bold text-menu-green group-hover:text-cream transition-colors duration-200">
+                    {s.title}
+                  </span>
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="text-menu-green/40 transition-all duration-200 group-hover:translate-x-1 group-hover:text-cream"
+                >
+                  →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }
