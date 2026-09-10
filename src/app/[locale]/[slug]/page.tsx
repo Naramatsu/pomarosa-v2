@@ -6,7 +6,9 @@ import { MenuSectionView } from "@/components/MenuSectionView";
 import { MENU_SECTIONS, getSection } from "@/data/menu";
 
 export function generateStaticParams() {
-  return MENU_SECTIONS.map((s) => ({ slug: s.slug }));
+  return MENU_SECTIONS.flatMap((s) =>
+    ["es", "en"].map((locale) => ({ locale, slug: s.slug }))
+  );
 }
 
 const sectionKeyMap: Record<string, string> = {
@@ -55,7 +57,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/logo.webp",
+          url: "https://pomarosa.com/logo.webp",
           width: 1200,
           height: 1200,
           alt: `PomaRosa ${title}`,
@@ -66,7 +68,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${title} · PomaRosa`,
       description,
-      images: ["/logo.webp"],
+      images: ["https://pomarosa.com/logo.webp"],
     },
   };
 }

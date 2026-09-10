@@ -31,7 +31,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/logo.webp",
+          url: "https://pomarosa.com/logo.webp",
           width: 1200,
           height: 1200,
           alt: "PomaRosa Panadería y Café en Cartagena",
@@ -42,7 +42,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `Menú · PomaRosa`,
       description: t("ogDescription"),
-      images: ["/logo.webp"],
+      images: ["https://pomarosa.com/logo.webp"],
     },
   };
 }

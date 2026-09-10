@@ -79,7 +79,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/logo.webp",
+          url: `${BASE_URL}/logo.webp`,
           width: 1200,
           height: 1200,
           alt: "PomaRosa Panadería y Café en Cartagena",
@@ -90,7 +90,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description: ogDescription,
-      images: ["/logo.webp"],
+      images: [`${BASE_URL}/logo.webp`],
     },
     icons: {
       icon: [
