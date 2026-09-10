@@ -1,11 +1,51 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { MENU_SECTIONS } from "@/data/menu";
 
-export const metadata: Metadata = {
-  title: "Menú",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Home" });
+
+  return {
+    title: t("pageTitle"),
+    description: t("metaDescription"),
+    alternates: {
+      canonical: "/",
+      languages: {
+        es: "/es",
+        en: "/en",
+      },
+    },
+    openGraph: {
+      title: `Menú · PomaRosa`,
+      description: t("ogDescription"),
+      url: "https://pomarosa.com",
+      siteName: "PomaRosa",
+      locale: locale === "es" ? "es_CO" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/logo.webp",
+          width: 1200,
+          height: 1200,
+          alt: "PomaRosa Panadería y Café en Cartagena",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Menú · PomaRosa`,
+      description: t("ogDescription"),
+      images: ["/logo.webp"],
+    },
+  };
+}
 
 const categoryIcons: Record<string, string> = {
   cafeteria: "☕",

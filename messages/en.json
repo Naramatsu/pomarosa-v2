@@ -10,7 +10,9 @@
   "Home": {
     "pageTitle": "Menu",
     "tagline": "Bakery · Pastry · Coffee",
-    "description": "Our menu, section by section — tap a category to view it."
+    "description": "Our menu, section by section — tap a category to view it.",
+    "ogDescription": "The complete PomaRosa menu in Cartagena. Artisan bakery, coffee, cold drinks, breakfasts, omelettes, combos, healthy options, waffles and pizza.",
+    "metaDescription": "PomaRosa menu in Cartagena. Explore our sections: café, cold drinks, breakfasts, combos and more. Cl. 70 #3-63."
   },
   "Footer": {
     "whatsapp": "WhatsApp",
@@ -22,7 +24,9 @@
   },
   "Layout": {
     "defaultTitle": "PomaRosa · Menu — Bakery and Coffee in Cartagena",
-    "metaDescription": "PomaRosa menu: café, cold drinks, American breakfasts, omelettes, combos, healthy options, ice cream waffles and pizzas. Cl. 70 #3-63, Cartagena."
+    "metaDescription": "PomaRosa menu: café, cold drinks, American breakfasts, omelettes, combos, healthy options, ice cream waffles and pizzas. Cl. 70 #3-63, Cartagena.",
+    "ogDescription": "Fresh, authentic flavors in every bite. Come enjoy our artisan bakery, pastry and coffee in Cartagena. We're waiting for you!",
+    "keywords": "artisan bakery Cartagena, pastry Cartagena, coffee shop Cartagena, fresh bread Cartagena, artisan desserts, coffee Cartagena, gourmet bakery Cartagena, bakery and coffee Cartagena, artisan products Cartagena, PomaRosa menu"
   },
   "NotFound": {
     "title": "Section not found",
@@ -38,6 +42,16 @@
     "saludables": "Healthy",
     "wafflesConHelado": "Ice Cream Waffles",
     "pizza": "Pizza"
+  },
+  "SectionSEO": {
+    "cafeteria": "Enjoy our coffee, chocolate, oatmeal and cappuccino at PomaRosa. Artisan bakery in Cartagena.",
+    "bebidasFrias": "Lemonades, natural juices, sodas and more at PomaRosa. Fresh cold drinks in Cartagena.",
+    "desayunoAmericano": "Full American breakfast with eggs, bread, butter, ham and more at PomaRosa Cartagena.",
+    "omelettesEspeciales": "Special omelettes with fresh ingredients at PomaRosa. Bakery and coffee in Cartagena.",
+    "combos": "Breakfast combos with drink included from 7:00am at PomaRosa Cartagena.",
+    "saludables": "Healthy options, oatmeal bowls, granola and fruit at PomaRosa Cartagena.",
+    "wafflesConHelado": "Waffles with artisan ice cream and delicious toppings at PomaRosa Cartagena.",
+    "pizza": "Artisan personal pizzas at PomaRosa. Bakery and coffee in Cartagena."
   },
   "Tagline": {
     "combos": "From 7:00am to 12:00pm every day",

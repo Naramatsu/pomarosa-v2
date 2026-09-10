@@ -18,18 +18,27 @@ const body = EB_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
+const BASE_URL = "https://pomarosa.com";
+
 const bakeryJsonLd = {
   "@context": "https://schema.org",
   "@type": "Bakery",
   name: "PomaRosa",
+  image: `${BASE_URL}/logo.webp`,
+  url: BASE_URL,
+  description:
+    "Menú de PomaRosa: cafetería, bebidas frías, desayunos americanos, omelettes, combos, saludables, waffles con helado y pizzas en Cartagena de Indias.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Cl. 70 #3-63",
-    addressLocality: "Cartagena",
+    addressLocality: "Cartagena de Indias",
+    addressRegion: "Bolívar",
+    postalCode: "130002",
     addressCountry: "CO",
   },
   telephone: "+573146343249",
   openingHours: "Mo-Su 07:00-21:00",
+  priceRange: "$$",
   sameAs: ["https://www.instagram.com/panaderiapomarosa"],
 };
 
@@ -40,22 +49,67 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Layout" });
+
+  const title = t("defaultTitle");
+  const description = t("metaDescription");
+  const ogDescription = t("ogDescription");
+  const keywords = t("keywords");
+
   return {
     title: {
-      default: t("defaultTitle"),
+      default: title,
       template: "%s · PomaRosa",
     },
-    description: t("metaDescription"),
+    description,
+    keywords,
+    metadataBase: new URL(BASE_URL),
+    alternates: {
+      canonical: "/",
+      languages: {
+        es: "/es",
+        en: "/en",
+      },
+    },
+    openGraph: {
+      title,
+      description: ogDescription,
+      url: BASE_URL,
+      siteName: "PomaRosa",
+      locale: locale === "es" ? "es_CO" : "en_US",
+      type: "website",
+      images: [
+        {
+          url: "/logo.webp",
+          width: 1200,
+          height: 1200,
+          alt: "PomaRosa Panadería y Café en Cartagena",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: ogDescription,
+      images: ["/logo.webp"],
+    },
     icons: {
       icon: [
         { url: "/favicon.webp", type: "image/webp" },
         { url: "/logo.webp", type: "image/webp", sizes: "any" },
       ],
-      apple: [
-        { url: "/logo.webp", type: "image/webp" },
-      ],
+      apple: [{ url: "/logo.webp", type: "image/webp" }],
     },
-    metadataBase: new URL("https://pomarosa.com"),
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 
@@ -74,6 +128,9 @@ export default async function RootLayout({
       lang={locale}
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="theme-color" content="#fffcf3" />
+      </head>
       <body className="flex min-h-full flex-col bg-cream text-cocoa">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <script

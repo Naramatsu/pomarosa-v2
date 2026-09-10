@@ -10,7 +10,9 @@
   "Home": {
     "pageTitle": "Menú",
     "tagline": "Panadería · Pastelería · Café",
-    "description": "Nuestro menú, sección por sección — toca una categoría para verla."
+    "description": "Nuestro menú, sección por sección — toca una categoría para verla.",
+    "ogDescription": "Menú completo de PomaRosa en Cartagena de Indias. Panadería artesanal, café, bebidas frías, desayunos, omelettes, combos, saludables, waffles y pizzas.",
+    "metaDescription": "Menú de PomaRosa en Cartagena de Indias. Explora nuestras secciones: cafetería, bebidas frías, desayunos, combos y más. Cl. 70 #3-63."
   },
   "Footer": {
     "whatsapp": "WhatsApp",
@@ -22,7 +24,9 @@
   },
   "Layout": {
     "defaultTitle": "PomaRosa · Menú — Panadería y Café en Cartagena",
-    "metaDescription": "Menú de PomaRosa: cafetería, bebidas frías, desayunos americanos, omelettes, combos, saludables, waffles con helado y pizzas. Cl. 70 #3-63, Cartagena."
+    "metaDescription": "Menú de PomaRosa: cafetería, bebidas frías, desayunos americanos, omelettes, combos, saludables, waffles con helado y pizzas. Cl. 70 #3-63, Cartagena.",
+    "ogDescription": "Sabores frescos y auténticos en cada bocado. Ven a disfrutar de nuestra panadería artesanal, pastelería y café en Cartagena de Indias. ¡Te esperamos!",
+    "keywords": "panadería artesanal Cartagena, pastelería Cartagena de Indias, cafetería Cartagena, panes frescos Cartagena, postres artesanales, cafés en Cartagena, panadería gourmet Cartagena, panadería y café en Cartagena de Indias, productos artesanales Cartagena, menú PomaRosa"
   },
   "NotFound": {
     "title": "Sección no encontrada",
@@ -38,6 +42,16 @@
     "saludables": "Saludables",
     "wafflesConHelado": "Waffles con Helado",
     "pizza": "Pizza"
+  },
+  "SectionSEO": {
+    "cafeteria": "Disfruta de nuestros café, chocolate, avena y cappuccino en PomaRosa. Panadería artesanal en Cartagena de Indias.",
+    "bebidasFrias": "Limonadas, jugos naturales, gaseosas y más en PomaRosa. Bebidas frías frescas en Cartagena de Indias.",
+    "desayunoAmericano": "Desayuno americano completo con huevo, pan, mantequilla, jamón y más en PomaRosa Cartagena.",
+    "omelettesEspeciales": "Omelettes especiales con ingredientes frescos en PomaRosa. Panadería y café en Cartagena de Indias.",
+    "combos": "Combos de desayuno con bebida incluida desde las 7:00am en PomaRosa Cartagena.",
+    "saludables": "Opciones saludables, bowls de avena, granola y frutas en PomaRosa Cartagena.",
+    "wafflesConHelado": "Waffles con helado artesanal y toppings deliciosos en PomaRosa Cartagena.",
+    "pizza": "Pizzas personales artesanales en PomaRosa. Panadería y café en Cartagena de Indias."
   },
   "Tagline": {
     "combos": "De 7:00am a 12:00pm todos los días",
