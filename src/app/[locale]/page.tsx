@@ -56,6 +56,7 @@ const categoryIcons: Record<string, string> = {
   saludables: "🥗",
   "waffles-con-helado": "🧇",
   pizzas: "🍕",
+  panaderia: "🍞",
 };
 
 export default function Home() {
@@ -73,6 +74,7 @@ export default function Home() {
     saludables: "saludables",
     "waffles-con-helado": "wafflesConHelado",
     pizzas: "pizza",
+    panaderia: "panaderia",
   };
 
   return (

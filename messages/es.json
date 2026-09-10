@@ -41,7 +41,8 @@
     "combos": "Combos",
     "saludables": "Saludables",
     "wafflesConHelado": "Waffles con Helado",
-    "pizza": "Pizza"
+    "pizza": "Pizza",
+    "panaderia": "Panadería"
   },
   "SectionSEO": {
     "cafeteria": "Disfruta de nuestros café, chocolate, avena y cappuccino en PomaRosa. Panadería artesanal en Cartagena de Indias.",
@@ -51,7 +52,8 @@
     "combos": "Combos de desayuno con bebida incluida desde las 7:00am en PomaRosa Cartagena.",
     "saludables": "Opciones saludables, bowls de avena, granola y frutas en PomaRosa Cartagena.",
     "wafflesConHelado": "Waffles con helado artesanal y toppings deliciosos en PomaRosa Cartagena.",
-    "pizza": "Pizzas personales artesanales en PomaRosa. Panadería y café en Cartagena de Indias."
+    "pizza": "Pizzas personales artesanales en PomaRosa. Panadería y café en Cartagena de Indias.",
+    "panaderia": "Pan artesanal, galletas, pasteles y brioche en PomaRosa. Panadería artesanal en Cartagena de Indias."
   },
   "Tagline": {
     "combos": "De 7:00am a 12:00pm todos los días",
@@ -83,5 +85,10 @@
     "productos": "Productos",
     "verImagenDe": "Ver imagen de {name}",
     "cerrar": "Cerrar"
+  },
+  "Bakery": {
+    "producto": "Producto",
+    "mediano": "Mediano",
+    "grande": "Grande"
   }
 }

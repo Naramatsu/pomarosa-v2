@@ -41,7 +41,8 @@
     "combos": "Combos",
     "saludables": "Healthy",
     "wafflesConHelado": "Ice Cream Waffles",
-    "pizza": "Pizza"
+    "pizza": "Pizza",
+    "panaderia": "Bakery"
   },
   "SectionSEO": {
     "cafeteria": "Enjoy our coffee, chocolate, oatmeal and cappuccino at PomaRosa. Artisan bakery in Cartagena.",
@@ -51,7 +52,8 @@
     "combos": "Breakfast combos with drink included from 7:00am at PomaRosa Cartagena.",
     "saludables": "Healthy options, oatmeal bowls, granola and fruit at PomaRosa Cartagena.",
     "wafflesConHelado": "Waffles with artisan ice cream and delicious toppings at PomaRosa Cartagena.",
-    "pizza": "Artisan personal pizzas at PomaRosa. Bakery and coffee in Cartagena."
+    "pizza": "Artisan personal pizzas at PomaRosa. Bakery and coffee in Cartagena.",
+    "panaderia": "Artisan bread, cookies, cakes and brioche at PomaRosa. Artisan bakery in Cartagena."
   },
   "Tagline": {
     "combos": "From 7:00am to 12:00pm every day",
@@ -83,5 +85,10 @@
     "productos": "Products",
     "verImagenDe": "View image of {name}",
     "cerrar": "Close"
+  },
+  "Bakery": {
+    "producto": "Product",
+    "mediano": "Medium",
+    "grande": "Large"
   }
 }

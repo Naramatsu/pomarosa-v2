@@ -51,11 +51,6 @@ export function SiteHeader() {
     };
   }, [open, close]);
 
-  const sectionKey = MENU_SECTIONS.find((s) => pathname.endsWith(`/${s.slug}`))?.slug;
-  const currentTitle = sectionKey
-    ? tSection(sectionKey === "cafeteria" ? "cafeteria" : sectionKey === "bebidas-frias" ? "bebidasFrias" : sectionKey === "desayuno-americano" ? "desayunoAmericano" : sectionKey === "omelettes-especiales" ? "omelettesEspeciales" : sectionKey === "combos" ? "combos" : sectionKey === "saludables" ? "saludables" : sectionKey === "waffles-con-helado" ? "wafflesConHelado" : "pizza")
-    : "PomaRosa";
-
   const sectionTitleMap: Record<string, string> = {
     cafeteria: "cafeteria",
     "bebidas-frias": "bebidasFrias",
@@ -65,7 +60,13 @@ export function SiteHeader() {
     saludables: "saludables",
     "waffles-con-helado": "wafflesConHelado",
     pizzas: "pizza",
+    panaderia: "panaderia",
   };
+
+  const sectionKey = MENU_SECTIONS.find((s) => pathname.endsWith(`/${s.slug}`))?.slug;
+  const currentTitle = sectionKey
+    ? tSection(sectionTitleMap[sectionKey] ?? sectionKey)
+    : "PomaRosa";
 
   return (
     <>

@@ -672,6 +672,12 @@ export const MENU_SECTIONS: MenuSection[] = [
       },
     ],
   },
+  {
+    slug: "panaderia",
+    title: "Panadería",
+    title_en: "Bakery",
+    groups: [],
+  },
 ];
 
 export function getSection(slug: string): MenuSection | undefined {
