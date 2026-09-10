@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { MENU_SECTIONS } from "@/data/menu";
+import Image from "next/image";
 
 export async function generateMetadata({
   params,
@@ -83,7 +84,7 @@ export default function Home() {
         <p className="font-display text-base font-bold uppercase tracking-[0.3em] text-coffee">
           {t("tagline")}
         </p>
-        <img
+        <Image
           src="/logo.webp"
           alt="PomaRosa"
           width={140}
@@ -106,7 +107,7 @@ export default function Home() {
             >
               <Link
                 href={`/${locale}/${s.slug}`}
-                className="group flex items-center gap-4 rounded-2xl border border-cocoa/10 bg-white/60 px-5 py-4 shadow-sm transition-all duration-200 hover:border-menu-green/40 hover:bg-menu-green hover:shadow-md hover:shadow-menu-green/10"
+                className="group flex items-center gap-4 rounded-2xl border border-cocoa/10 bg-white/60 px-5 py-4 shadow-sm transition-all duration-200 hover:border-menu-green/40 hover:bg-menu-green hover:shadow-md hover:shadow-menu-green/10 h-full"
               >
                 <span
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sage/50 text-2xl transition-colors duration-200 group-hover:bg-white/20"

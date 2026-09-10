@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 import { MENU_SECTIONS } from "@/data/menu";
 import { LocaleToggle } from "./LocaleToggle";
+import Image from "next/image";
 
 const linkBase =
   "block w-full rounded-xl px-4 py-3 text-left font-display text-xl font-bold tracking-wide transition-colors duration-150";
@@ -63,7 +64,9 @@ export function SiteHeader() {
     panaderia: "panaderia",
   };
 
-  const sectionKey = MENU_SECTIONS.find((s) => pathname.endsWith(`/${s.slug}`))?.slug;
+  const sectionKey = MENU_SECTIONS.find((s) =>
+    pathname.endsWith(`/${s.slug}`),
+  )?.slug;
   const currentTitle = sectionKey
     ? tSection(sectionTitleMap[sectionKey] ?? sectionKey)
     : "PomaRosa";
@@ -73,7 +76,7 @@ export function SiteHeader() {
       <header className="sticky top-0 z-40 border-b border-cocoa/10 bg-cream/95 backdrop-blur-md">
         <div className="relative mx-auto flex h-16 w-full max-w-2xl items-center justify-between px-4">
           <Link href={`/${locale}`} className="flex items-center">
-            <img
+            <Image
               src="/logo.webp"
               alt="PomaRosa"
               width={52}
@@ -98,18 +101,18 @@ export function SiteHeader() {
             >
               <span aria-hidden="true" className="relative block h-4.5 w-6">
                 <span
-                  className={`absolute left-0 top-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
-                    open ? "top-[7px] rotate-45" : ""
+                  className={`absolute left-0 top-0 h-0.75 w-full rounded-full bg-current transition-all duration-300 ease-out ${
+                    open ? "top-1.75 rotate-45" : ""
                   }`}
                 />
                 <span
-                  className={`absolute left-0 top-[7px] h-[3px] w-full rounded-full bg-current transition-all duration-200 ${
+                  className={`absolute left-0 top-1.75 h-0.75 w-full rounded-full bg-current transition-all duration-200 ${
                     open ? "opacity-0 scale-x-0" : ""
                   }`}
                 />
                 <span
-                  className={`absolute left-0 bottom-0 h-[3px] w-full rounded-full bg-current transition-all duration-300 ease-out ${
-                    open ? "top-[7px] -rotate-45" : ""
+                  className={`absolute left-0 bottom-0 h-0.75 w-full rounded-full bg-current transition-all duration-300 ease-out ${
+                    open ? "top-1.75 -rotate-45" : ""
                   }`}
                 />
               </span>
@@ -146,10 +149,18 @@ export function SiteHeader() {
             aria-label={t("cerrarMenu")}
             className="flex h-10 w-10 items-center justify-center rounded-xl text-menu-green transition-colors hover:bg-menu-green/10"
           >
-            <span aria-hidden="true" className="relative block h-5 w-5">
-              <span className="absolute left-0 top-[2px] h-[3px] w-full rotate-45 rounded-full bg-current" />
-              <span className="absolute left-0 bottom-[2px] h-[3px] w-full -rotate-45 rounded-full bg-current" />
-            </span>
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              className="h-5 w-5"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
           </button>
         </div>
 
