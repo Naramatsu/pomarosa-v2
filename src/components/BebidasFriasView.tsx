@@ -50,7 +50,7 @@ function JugosGroup({ group }: { group: MenuGroup }) {
             {subtitleLines.map((line) => (
               <span
                 key={line}
-                className="rounded-full border border-menu-green/20 bg-menu-green/8 px-4 py-1.5 text-sm font-bold text-menu-green"
+                className="rounded-full border border-menu-green/25 bg-menu-green/8 px-4 py-2 text-lg font-bold text-menu-green"
               >
                 {line}
               </span>
@@ -58,15 +58,33 @@ function JugosGroup({ group }: { group: MenuGroup }) {
           </div>
         )}
         <div className="mt-4 flex flex-wrap justify-center gap-2">
-          {group.items.map((item) => (
-            <span
-              key={item.name}
-              className="rounded-full border border-cocoa/12 bg-cream/70 px-4 py-2 text-lg font-bold text-cocoa"
-            >
-              {isEn ? (item.name_en ?? item.name) : item.name}
-            </span>
-          ))}
+          {group.items
+            .filter((item) => !item.price)
+            .map((item) => (
+              <span
+                key={item.name}
+                className="rounded-full border border-cocoa/12 bg-cream/70 px-4 py-2 text-lg font-bold text-cocoa"
+              >
+                {isEn ? (item.name_en ?? item.name) : item.name}
+              </span>
+            ))}
         </div>
+        {group.items.some((item) => item.price) && (
+          <div className="mt-3 flex flex-wrap justify-center gap-2">
+            {group.items
+              .filter((item) => item.price)
+              .map((item) => (
+                <span
+                  key={item.name}
+                  className="rounded-full border border-menu-green/25 bg-menu-green/8 px-4 py-2 text-lg font-bold text-menu-green"
+                >
+                  {isEn ? (item.name_en ?? item.name) : item.name}
+                  {"  "}
+                  <span className="text-base font-semibold">{item.price}</span>
+                </span>
+              ))}
+          </div>
+        )}
       </div>
       {group.note && (
         <p className="mt-3 text-sm italic text-cocoa/60">
