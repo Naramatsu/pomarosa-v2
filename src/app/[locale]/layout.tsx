@@ -46,6 +46,16 @@ export async function generateMetadata({
       template: "%s · PomaRosa",
     },
     description: t("metaDescription"),
+    icons: {
+      icon: [
+        { url: "/favicon.webp", type: "image/webp" },
+        { url: "/logo.webp", type: "image/webp", sizes: "any" },
+      ],
+      apple: [
+        { url: "/logo.webp", type: "image/webp" },
+      ],
+    },
+    metadataBase: new URL("https://pomarosa.com"),
   };
 }
 
