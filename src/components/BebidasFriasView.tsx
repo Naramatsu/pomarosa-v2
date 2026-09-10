@@ -28,15 +28,13 @@ function LeafDivider() {
   );
 }
 
-function JugosGroup({
-  group,
-}: {
-  group: MenuGroup;
-}) {
+function JugosGroup({ group }: { group: MenuGroup }) {
   const locale = useLocale();
   const isEn = locale === "en";
-  const title = isEn ? group.title_en ?? group.title : group.title;
-  const subtitleLines = isEn ? group.subtitleLines_en ?? group.subtitleLines : group.subtitleLines;
+  const title = isEn ? (group.title_en ?? group.title) : group.title;
+  const subtitleLines = isEn
+    ? (group.subtitleLines_en ?? group.subtitleLines)
+    : group.subtitleLines;
 
   return (
     <section aria-label={title} className="animate-fade-in-up">
@@ -65,13 +63,15 @@ function JugosGroup({
               key={item.name}
               className="rounded-full border border-cocoa/12 bg-cream/70 px-4 py-2 text-lg font-bold text-cocoa"
             >
-              {isEn ? item.name_en ?? item.name : item.name}
+              {isEn ? (item.name_en ?? item.name) : item.name}
             </span>
           ))}
         </div>
       </div>
       {group.note && (
-        <p className="mt-3 text-sm italic text-cocoa/60">{isEn ? group.note_en ?? group.note : group.note}</p>
+        <p className="mt-3 text-sm italic text-cocoa/60">
+          {isEn ? (group.note_en ?? group.note) : group.note}
+        </p>
       )}
     </section>
   );
@@ -102,20 +102,21 @@ export function BebidasFriasView({ section }: { section: MenuSection }) {
   return (
     <article className="mx-auto w-full max-w-2xl px-5 pb-16 pt-6 animate-fade-in-up">
       <header className="text-center">
-        <h1 className="font-display text-6xl font-black tracking-wide text-menu-green sm:text-7xl">
-          {isEn ? section.title_en ?? section.title : section.title}
+        <h1 className="font-display text-5xl font-black tracking-wide text-menu-green sm:text-6xl">
+          {isEn ? (section.title_en ?? section.title) : section.title}
         </h1>
         {section.tagline && (
           <p className="mt-2 font-display text-xl font-bold text-coffee">
-            {isEn ? section.tagline_en ?? section.tagline : section.tagline}
+            {isEn ? (section.tagline_en ?? section.tagline) : section.tagline}
           </p>
         )}
         <LeafOrnament />
       </header>
 
       {section.groups.map((group, i) => {
-        const groupTitle = isEn ? group.title_en ?? group.title : group.title;
-        const isJugos = groupTitle === "Jugos Naturales" || group.title === "Jugos Naturales";
+        const groupTitle = isEn ? (group.title_en ?? group.title) : group.title;
+        const isJugos =
+          groupTitle === "Jugos Naturales" || group.title === "Jugos Naturales";
         return (
           <div key={group.title ?? `group-${i}`}>
             {i > 0 && <LeafDivider />}

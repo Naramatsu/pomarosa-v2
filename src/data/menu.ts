@@ -60,24 +60,84 @@ export const MENU_SECTIONS: MenuSection[] = [
     groups: [
       {
         items: [
-          { name: "Te Chai latte", name_en: "Chai Tea Latte", hot: "$ 13.000", cold: "$ 16.500", image: "techai.jpg" },
-          { name: "Milo", name_en: "Milo", hot: "$ 12.000", cold: "$ 16.000", image: "milo.jpg" },
-          { name: "Chocolate", name_en: "House Hot Chocolate", hot: "$ 10.500" },
-          { name: "Capuchino Caramel", name_en: "Caramel Cappuccino", hot: "$ 13.000", cold: "$ 18.500" },
-          { name: "Capuchino", name_en: "Cappuccino", hot: "$ 10.500", cold: "$ 15.500", image: "capuchinos.jpeg" },
-          { name: "Café doble", name_en: "Double Coffee", hot: "$ 11.500", cold: "$ 12.500" },
-          { name: "Té Negro", name_en: "Black Tea", hot: "$ 8.000", image: "tenegro.jpg" },
-          { name: "Latte", name_en: "Latte", hot: "$ 10.500", cold: "$ 14.500", image: "lattegrande.jpg" },
-          { name: "Aromática de frutas", name_en: "Fruit Herbal Tea", hot: "$ 8.500" },
-          { name: "Americano", name_en: "Americano", hot: "$ 8.000", cold: "$ 12.500" },
+          {
+            name: "Te Chai latte",
+            name_en: "Chai Tea Latte",
+            hot: "$ 13.000",
+            cold: "$ 16.500",
+            image: "techai.jpg",
+          },
+          {
+            name: "Milo",
+            name_en: "Milo",
+            hot: "$ 12.000",
+            cold: "$ 16.000",
+            image: "milo.jpg",
+          },
+          {
+            name: "Chocolate",
+            name_en: "House Hot Chocolate",
+            hot: "$ 10.500",
+          },
+          {
+            name: "Capuchino Caramel",
+            name_en: "Caramel Cappuccino",
+            hot: "$ 13.000",
+            cold: "$ 18.500",
+          },
+          {
+            name: "Capuchino",
+            name_en: "Cappuccino",
+            hot: "$ 10.500",
+            cold: "$ 15.500",
+            image: "capuchinos.jpeg",
+          },
+          {
+            name: "Café doble",
+            name_en: "Double Coffee",
+            hot: "$ 11.500",
+            cold: "$ 12.500",
+          },
+          {
+            name: "Té Negro",
+            name_en: "Black Tea",
+            hot: "$ 8.000",
+            image: "tenegro.jpg",
+          },
+          {
+            name: "Latte",
+            name_en: "Latte",
+            hot: "$ 10.500",
+            cold: "$ 14.500",
+            image: "lattegrande.jpg",
+          },
+          {
+            name: "Aromática de frutas",
+            name_en: "Fruit Herbal Tea",
+            hot: "$ 8.500",
+          },
+          {
+            name: "Americano",
+            name_en: "Americano",
+            hot: "$ 8.000",
+            cold: "$ 12.500",
+          },
           {
             name: "Latte con leche de almendras",
             name_en: "Almond Milk Latte",
             hot: "$ 12.000",
             cold: "$ 15.500",
           },
-          { name: "Avena casera fría", name_en: "Cold Homemade Oatmeal", cold: "$ 7.000" },
-          { name: "Kumis tradicional", name_en: "Traditional Kumis", cold: "$ 7.500" },
+          {
+            name: "Avena casera fría",
+            name_en: "Cold Homemade Oatmeal",
+            cold: "$ 7.000",
+          },
+          {
+            name: "Kumis tradicional",
+            name_en: "Traditional Kumis",
+            cold: "$ 7.500",
+          },
           {
             name: "Adicional leche de Almendras ó de Avena",
             name_en: "Add Almond or Oat Milk",
@@ -90,13 +150,39 @@ export const MENU_SECTIONS: MenuSection[] = [
         title: "Para Acompañar",
         title_en: "To Accompany",
         items: [
-          { name: "Alfajor pequeño", name_en: "Small Alfajor", price: "$ 4.000" },
-          { name: "Pan de chocolate", name_en: "Chocolate Bread", price: "$ 6.000", image: "pandechocolate.jpg" },
-          { name: "Pan jamón y queso", name_en: "Ham and Cheese Bread", price: "$ 6.500", image: "jamonyqueso.jpg" },
-          { name: "Pan de tres quesos", name_en: "Three-Cheese Bread", price: "$ 7.500" },
-          { name: "Pan Choco-Arándanos", name_en: "Blueberry Chocolate Bread", price: "$ 8.500" },
+          {
+            name: "Alfajor pequeño",
+            name_en: "Small Alfajor",
+            price: "$ 4.000",
+          },
+          {
+            name: "Pan de chocolate",
+            name_en: "Chocolate Bread",
+            price: "$ 6.000",
+            image: "pandechocolate.jpg",
+          },
+          {
+            name: "Pan jamón y queso",
+            name_en: "Ham and Cheese Bread",
+            price: "$ 6.500",
+            image: "jamonyqueso.jpg",
+          },
+          {
+            name: "Pan de tres quesos",
+            name_en: "Three-Cheese Bread",
+            price: "$ 7.500",
+          },
+          {
+            name: "Pan Choco-Arándanos",
+            name_en: "Blueberry Chocolate Bread",
+            price: "$ 8.500",
+          },
           { name: "Galleta", name_en: "Cookie", price: "$ 9.500" },
-          { name: "Rollito de canela", name_en: "Cinnamon Roll", price: "$ 10.500" },
+          {
+            name: "Rollito de canela",
+            name_en: "Cinnamon Roll",
+            price: "$ 10.500",
+          },
           { name: "Pan Pizza", name_en: "Pizza Bread", price: "$ 14.000" },
           { name: "Fatay Árabe", name_en: "Arabian Fatay", price: "$ 14.000" },
           {
@@ -135,7 +221,12 @@ export const MENU_SECTIONS: MenuSection[] = [
           { name: "Mango", name_en: "Mango" },
           { name: "Mora", name_en: "Blackberry" },
           { name: "Banano", name_en: "Banana" },
-          { name: "Jugo de Naranja", name_en: "Orange Juice", price: "$ 12.000", image: "jugonaranja.jpg" },
+          {
+            name: "Jugo de Naranja",
+            name_en: "Orange Juice",
+            price: "$ 12.000",
+            image: "jugonaranja.jpg",
+          },
         ],
       },
       {
@@ -146,8 +237,16 @@ export const MENU_SECTIONS: MenuSection[] = [
           { name: "Agua", name_en: "Water", price: "$ 7.000" },
           { name: "Té Hatsu", name_en: "Hatsu Tea", price: "$ 10.500" },
           { name: "Soda Hatsu", name_en: "Hatsu Soda", price: "$ 9.500" },
-          { name: "Cerveza nacional", name_en: "National Beer", price: "$ 10.500" },
-          { name: "Cerveza importada", name_en: "Imported Beer", price: "$ 13.500" },
+          {
+            name: "Cerveza nacional",
+            name_en: "National Beer",
+            price: "$ 10.500",
+          },
+          {
+            name: "Cerveza importada",
+            name_en: "Imported Beer",
+            price: "$ 13.500",
+          },
         ],
       },
       {
@@ -248,18 +347,30 @@ export const MENU_SECTIONS: MenuSection[] = [
         title: "Agrega a tu Desayuno",
         title_en: "Add to your Breakfast",
         items: [
-          { name: "Papas rústicas", name_en: "Rustic Potatoes", price: "$ 7.000" },
-          { name: "Porción de frutas", name_en: "Fruit Portion", price: "$ 7.000" },
+          {
+            name: "Papas rústicas",
+            name_en: "Rustic Potatoes",
+            price: "$ 7.000",
+          },
+          {
+            name: "Porción de frutas",
+            name_en: "Fruit Portion",
+            price: "$ 7.000",
+          },
           { name: "Yogurt Griego", name_en: "Greek Yogurt", price: "$ 7.000" },
           {
             name: "Tostadas artesanales con mantequilla",
             name_en: "Artisan Toast with Butter",
             price: "$ 7.000",
           },
-          { name: "Arepa de maíz con mantequilla", name_en: "Corn Arepa with Butter", price: "$ 8.500" },
           {
-            name: "Arepa de maíz con mantequilla y queso costeño (3 unidades)",
-            name_en: "Corn Arepa with Butter and Coastal Cheese (3 units)",
+            name: "Arepa de maíz con mantequilla",
+            name_en: "Corn Arepa with Butter",
+            price: "$ 8.500",
+          },
+          {
+            name: "Arepa de maíz con mantequilla y queso costeño",
+            name_en: "Corn Arepa with Butter and Coastal Cheese",
             price: "$ 12.500",
           },
         ],
@@ -310,11 +421,29 @@ export const MENU_SECTIONS: MenuSection[] = [
         subtitle: "(3 unidades)",
         subtitle_en: "(3 units)",
         items: [
-          { name: "Revuelto ó fritos", name_en: "Scrambled or Fried", price: "$ 9.800", image: "huevosrevueltos.jpeg" },
-          { name: "Tomate y Cebolla", name_en: "Tomato and Onion", price: "$ 11.900", image: "huevoscontomateycebolla.jpeg" },
+          {
+            name: "Revuelto ó fritos",
+            name_en: "Scrambled or Fried",
+            price: "$ 9.800",
+            image: "huevosrevueltos.jpeg",
+          },
+          {
+            name: "Tomate y Cebolla",
+            name_en: "Tomato and Onion",
+            price: "$ 11.900",
+            image: "huevoscontomateycebolla.jpeg",
+          },
           { name: "Espinaca", name_en: "Spinach", price: "$ 13.500" },
-          { name: "Jamón y Queso", name_en: "Ham and Cheese", price: "$ 12.500" },
-          { name: "Chorizo santarrosano", name_en: "Santarrosano Chorizo", price: "$ 12.500" },
+          {
+            name: "Jamón y Queso",
+            name_en: "Ham and Cheese",
+            price: "$ 12.500",
+          },
+          {
+            name: "Chorizo santarrosano",
+            name_en: "Santarrosano Chorizo",
+            price: "$ 12.500",
+          },
           { name: "Pollo", name_en: "Chicken", price: "$ 14.000" },
         ],
       },
@@ -398,10 +527,8 @@ export const MENU_SECTIONS: MenuSection[] = [
           {
             name: "Plato de Fruta",
             name_en: "Fruit Plate",
-            description:
-              "Variedad de frutas de estación con semillas de chía",
-            description_en:
-              "Assorted seasonal fruits with chia seeds",
+            description: "Variedad de frutas de estación con semillas de chía",
+            description_en: "Assorted seasonal fruits with chia seeds",
             price: "$ 18.900",
             image: "platodefruta.jpg",
           },
@@ -475,8 +602,7 @@ export const MENU_SECTIONS: MenuSection[] = [
           {
             name: "Berries",
             name_en: "Berries",
-            description:
-              "Salsa de frutos rojos con fresas y arándanos frescos",
+            description: "Salsa de frutos rojos con fresas y arándanos frescos",
             description_en:
               "Berry sauce with fresh strawberries and blueberries",
             price: "$ 27.000",
@@ -507,8 +633,7 @@ export const MENU_SECTIONS: MenuSection[] = [
           {
             name: "Pepperoni",
             name_en: "Pepperoni",
-            description:
-              "Queso mozzarella, pomodoro, pepperoni y orégano",
+            description: "Queso mozzarella, pomodoro, pepperoni y orégano",
             description_en:
               "Mozzarella cheese, pomodoro, pepperoni and oregano",
             price: "$ 25.500",
@@ -545,14 +670,6 @@ export const MENU_SECTIONS: MenuSection[] = [
           },
         ],
       },
-    ],
-    footnotes: [
-      "**Todos los precios incluyen el impoconsumo del 8% — se sugiere una propina voluntaria del 10% sobre el valor total de la cuenta. Todas las propinas se reparten en partes iguales para el personal de la panadería. Es decisión del consumidor pagar o no el valor de la propina voluntaria.**",
-      "Ante cualquier inconveniente con el cobro de la propina, puede comunicarse con la Superintendencia de Industria y Comercio a través de sus canales de atención telefónica o por el correo institucional contactenos@sic.gov.co.",
-    ],
-    footnotes_en: [
-      "**All prices include the 8% consumption tax — a voluntary tip of 10% on the total bill is suggested. All tips are shared equally among the bakery staff. It is entirely up to the customer to decide whether or not to pay the voluntary tip.**",
-      "If you have any issues regarding the tip charge, you may contact the Superintendency of Industry and Commerce through their telephone service channels or by email at contactenos@sic.gov.co.",
     ],
   },
 ];

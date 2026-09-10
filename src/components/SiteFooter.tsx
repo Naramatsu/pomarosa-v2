@@ -28,14 +28,14 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <p className="mt-4 text-center text-sm text-cocoa/50">
+        <p className="mt-4 text-center text-sm text-cocoa">
           {t("addressHours")}
         </p>
 
-        <p className="mt-4 text-center text-sm leading-relaxed text-cocoa/35">
+        <p className="mt-4 text-center text-sm leading-relaxed text-cocoa">
           {t("legalDisclaimer")}
         </p>
-        <p className="mt-1 text-center text-sm leading-relaxed text-cocoa/35">
+        <p className="mt-1 text-center text-sm leading-relaxed text-cocoa">
           {t("sicDisclaimer")}
         </p>
       </div>

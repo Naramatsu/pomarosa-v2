@@ -27,12 +27,12 @@ export function MenuSectionView({ section }: { section: MenuSection }) {
   return (
     <article className="mx-auto w-full max-w-2xl px-5 pb-16 pt-6 animate-fade-in-up">
       <header className="text-center">
-        <h1 className="font-display text-6xl font-black tracking-wide text-menu-green sm:text-7xl">
-          {isEn ? section.title_en ?? section.title : section.title}
+        <h1 className="font-display text-5xl font-black tracking-wide text-menu-green sm:text-6xl">
+          {isEn ? (section.title_en ?? section.title) : section.title}
         </h1>
         {section.tagline && (
           <p className="mt-2 font-display text-xl font-bold text-coffee">
-            {isEn ? section.tagline_en ?? section.tagline : section.tagline}
+            {isEn ? (section.tagline_en ?? section.tagline) : section.tagline}
           </p>
         )}
         <LeafOrnament />
@@ -43,7 +43,9 @@ export function MenuSectionView({ section }: { section: MenuSection }) {
       ))}
 
       {section.footnotes?.map((note, i) => {
-        const footnotes = isEn ? section.footnotes_en ?? section.footnotes : section.footnotes;
+        const footnotes = isEn
+          ? (section.footnotes_en ?? section.footnotes)
+          : section.footnotes;
         return (
           <p
             key={note.slice(0, 32)}
