@@ -101,7 +101,7 @@ export default function Home() {
           {MENU_SECTIONS.map((s, i) => (
             <li
               key={s.slug}
-              className="animate-fade-in-up"
+              className={`animate-fade-in-up${s.slug === "panaderia" ? " sm:col-span-2" : ""}`}
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <Link
