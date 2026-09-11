@@ -5,9 +5,11 @@ import { BebidasFriasView } from "@/components/BebidasFriasView";
 import { MenuSectionView } from "@/components/MenuSectionView";
 import { MENU_SECTIONS, getSection } from "@/data/menu";
 
+const DEDICATED_SLUGS = ["panaderia", "pasteleria", "la-divisa"];
+
 export function generateStaticParams() {
-  return MENU_SECTIONS.flatMap((s) =>
-    ["es", "en"].map((locale) => ({ locale, slug: s.slug }))
+  return MENU_SECTIONS.filter((s) => !DEDICATED_SLUGS.includes(s.slug)).flatMap(
+    (s) => ["es", "en"].map((locale) => ({ locale, slug: s.slug }))
   );
 }
 
@@ -20,6 +22,9 @@ const sectionKeyMap: Record<string, string> = {
   saludables: "saludables",
   "waffles-con-helado": "wafflesConHelado",
   pizzas: "pizza",
+  panaderia: "panaderia",
+  pasteleria: "pasteleria",
+  "la-divisa": "laDivisa",
 };
 
 export async function generateMetadata({

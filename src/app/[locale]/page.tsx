@@ -58,6 +58,8 @@ const categoryIcons: Record<string, string> = {
   "waffles-con-helado": "🧇",
   pizzas: "🍕",
   panaderia: "🍞",
+  pasteleria: "🎂",
+  "la-divisa": "🧁",
 };
 
 export default function Home() {
@@ -76,6 +78,8 @@ export default function Home() {
     "waffles-con-helado": "wafflesConHelado",
     pizzas: "pizza",
     panaderia: "panaderia",
+    pasteleria: "pasteleria",
+    "la-divisa": "laDivisa",
   };
 
   return (

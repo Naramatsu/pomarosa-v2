@@ -62,6 +62,8 @@ export function SiteHeader() {
     "waffles-con-helado": "wafflesConHelado",
     pizzas: "pizza",
     panaderia: "panaderia",
+    pasteleria: "pasteleria",
+    "la-divisa": "laDivisa",
   };
 
   const sectionKey = MENU_SECTIONS.find((s) =>
