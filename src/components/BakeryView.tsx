@@ -110,7 +110,7 @@ export function BakeryView() {
         <div key={section.slug}>
           {i > 0 && <LeafDivider />}
           <section aria-label={isEn ? section.title_en : section.title} className="animate-fade-in-up">
-            <div className="mt-6 rounded-2xl border border-sage bg-sage/30 p-5 pt-4">
+            <div className="mt-6 rounded-2xl border border-sage p-5 pt-4">
               <h2 className="text-center font-display text-3xl font-bold tracking-wide text-menu-green sm:text-4xl">
                 {isEn ? section.title_en : section.title}
               </h2>

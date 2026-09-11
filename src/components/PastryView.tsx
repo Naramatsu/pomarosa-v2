@@ -35,7 +35,7 @@ export function PastryView() {
         </div>
       </header>
 
-      <div className="mt-6 rounded-2xl border border-sage bg-sage/30 p-5 pt-4">
+      <div className="mt-6 rounded-2xl border border-sage p-5 pt-4">
         <ul className="divide-y divide-cocoa/10">
           {PASTRY_ITEMS.map((item) => (
             <li key={item.name} className="flex items-center justify-between gap-4 py-3">
