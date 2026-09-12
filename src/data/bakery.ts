@@ -111,8 +111,8 @@ export const BAKERY_SUBSECTIONS: BakerySubsectionData[] = [
         priceGrande: "$ 29.500",
       },
       {
-        name: "Queso Costeño",
-        name_en: "Costeño Cheese",
+        name: "Queso Costeño + Ajo",
+        name_en: "Costeño Cheese + Garlic",
         priceMediano: "—",
         priceGrande: "—",
       },

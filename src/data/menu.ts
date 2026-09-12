@@ -672,6 +672,12 @@ export const MENU_SECTIONS: MenuSection[] = [
     ],
   },
   {
+    slug: "panaderia",
+    title: "Panadería",
+    title_en: "Bakery",
+    groups: [],
+  },
+  {
     slug: "pasteleria",
     title: "Pastelería",
     title_en: "Pastry",
@@ -681,12 +687,6 @@ export const MENU_SECTIONS: MenuSection[] = [
     slug: "la-divisa",
     title: "La Divisa | Café",
     title_en: "La Divisa | Coffee",
-    groups: [],
-  },
-  {
-    slug: "panaderia",
-    title: "Panadería",
-    title_en: "Bakery",
     groups: [],
   },
 ];
