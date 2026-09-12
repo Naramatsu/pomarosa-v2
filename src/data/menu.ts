@@ -305,6 +305,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description: "Con miel de maple y mantequilla",
             description_en: "With maple syrup and butter",
             price: "$ 19.000",
+            image: "waffleclasico.jpg",
           },
           {
             name: "Sándwich BLT",
@@ -323,6 +324,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "Chicken breast, pork ham, mozzarella cheese, crispy bacon, fried egg, lettuce, tomato, mayonnaise and mustard on artisan bread",
             price: "$ 37.500",
+            image: "clubsandwich.jpg",
           },
           {
             name: "Waffle Sándwich",
@@ -332,6 +334,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "With pork ham, crispy bacon, scrambled eggs, mozzarella cheese and garlic mayonnaise",
             price: "$ 35.000",
+            image: "wafflesanduche.jpg",
           },
         ],
       },
@@ -620,6 +623,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "Mozzarella cheese, pomodoro, oregano, fresh tomato and garlic oil",
             price: "$ 25.500",
+            image: "pizzanapolitana.jpg",
           },
           {
             name: "Pepperoni",
