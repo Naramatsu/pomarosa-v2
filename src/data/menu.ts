@@ -65,14 +65,12 @@ export const MENU_SECTIONS: MenuSection[] = [
             name_en: "Chai Tea Latte",
             hot: "$ 13.000",
             cold: "$ 16.500",
-            image: "techai.jpg",
           },
           {
             name: "Milo",
             name_en: "Milo",
             hot: "$ 12.000",
             cold: "$ 16.000",
-            image: "milo.jpg",
           },
           {
             name: "Chocolate",
@@ -90,7 +88,6 @@ export const MENU_SECTIONS: MenuSection[] = [
             name_en: "Cappuccino",
             hot: "$ 10.500",
             cold: "$ 15.500",
-            image: "capuchinos.jpeg",
           },
           {
             name: "Café doble",
@@ -102,14 +99,12 @@ export const MENU_SECTIONS: MenuSection[] = [
             name: "Té Negro",
             name_en: "Black Tea",
             hot: "$ 8.000",
-            image: "tenegro.jpg",
           },
           {
             name: "Latte",
             name_en: "Latte",
             hot: "$ 10.500",
             cold: "$ 14.500",
-            image: "lattegrande.jpg",
           },
           {
             name: "Aromática de frutas",
@@ -159,13 +154,11 @@ export const MENU_SECTIONS: MenuSection[] = [
             name: "Pan de chocolate",
             name_en: "Chocolate Bread",
             price: "$ 6.000",
-            image: "pandechocolate.jpg",
           },
           {
             name: "Pan jamón y queso",
             name_en: "Ham and Cheese Bread",
             price: "$ 6.500",
-            image: "jamonyqueso.jpg",
           },
           {
             name: "Pan de tres quesos",
@@ -225,7 +218,6 @@ export const MENU_SECTIONS: MenuSection[] = [
             name: "Jugo de Naranja",
             name_en: "Orange Juice",
             price: "$ 12.000",
-            image: "jugonaranja.jpg",
           },
         ],
       },
@@ -425,13 +417,11 @@ export const MENU_SECTIONS: MenuSection[] = [
             name: "Revuelto ó fritos",
             name_en: "Scrambled or Fried",
             price: "$ 9.800",
-            image: "huevosrevueltos.jpeg",
           },
           {
             name: "Tomate y Cebolla",
             name_en: "Tomato and Onion",
             price: "$ 11.900",
-            image: "huevoscontomateycebolla.jpeg",
           },
           { name: "Espinaca", name_en: "Spinach", price: "$ 13.500" },
           {
@@ -588,6 +578,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "With fresh sliced banana, caramel sauce and dulce de leche",
             price: "$ 26.000",
+            image: "waffledebanano.jpeg",
           },
           {
             name: "Nutella",
