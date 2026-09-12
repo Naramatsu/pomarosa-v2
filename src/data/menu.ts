@@ -680,8 +680,8 @@ export const MENU_SECTIONS: MenuSection[] = [
   },
   {
     slug: "la-divisa",
-    title: "La Divisa",
-    title_en: "La Divisa",
+    title: "La Divisa | Café",
+    title_en: "La Divisa | Coffee",
     groups: [],
   },
   {

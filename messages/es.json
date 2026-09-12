@@ -11,8 +11,8 @@
     "pageTitle": "Menú",
     "tagline": "Panadería · Pastelería · Café",
     "description": "Nuestro menú, sección por sección — toca una categoría para verla.",
-    "ogDescription": "Menú completo de PomaRosa en Cartagena de Indias. Panadería artesanal, café, bebidas frías, desayunos, omelettes, combos, saludables, waffles, pizzas, pastelería y La Divisa.",
-    "metaDescription": "Menú de PomaRosa en Cartagena de Indias. Explora nuestras secciones: cafetería, bebidas frías, desayunos, combos, pastelería, La Divisa y más. Cl. 70 #3-63."
+    "ogDescription": "Menú completo de PomaRosa en Cartagena de Indias. Panadería artesanal, café, bebidas frías, desayunos, omelettes, combos, saludables, waffles, pizzas, pastelería y La Divisa | Café.",
+    "metaDescription": "Menú de PomaRosa en Cartagena de Indias. Explora nuestras secciones: cafetería, bebidas frías, desayunos, combos, pastelería, La Divisa | Café y más. Cl. 70 #3-63."
   },
   "Footer": {
     "whatsapp": "WhatsApp",
@@ -44,7 +44,7 @@
     "pizza": "Pizza",
     "panaderia": "Panadería",
     "pasteleria": "Pastelería",
-    "laDivisa": "La Divisa"
+    "laDivisa": "La Divisa | Café"
   },
   "SectionSEO": {
     "cafeteria": "Disfruta de nuestros café, chocolate, avena y cappuccino en PomaRosa. Panadería artesanal en Cartagena de Indias.",
@@ -57,7 +57,7 @@
     "pizza": "Pizzas personales artesanales en PomaRosa. Panadería y café en Cartagena de Indias.",
     "panaderia": "Pan artesanal, galletas, pasteles y brioche en PomaRosa. Panadería artesanal en Cartagena de Indias.",
     "pasteleria": "Quesillos, cheesecakes, tortas y tres leches en PomaRosa. Pastelería artesanal en Cartagena de Indias.",
-    "laDivisa": "Pan tradicional y especial de La Divisa en PomaRosa. Panadería artesanal en Cartagena de Indias."
+    "laDivisa": "Pan tradicional y especial de La Divisa | Café en PomaRosa. Panadería artesanal en Cartagena de Indias."
   },
   "Tagline": {
     "combos": "De 7:00am a 12:00pm todos los días",

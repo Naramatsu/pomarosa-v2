@@ -11,8 +11,8 @@
     "pageTitle": "Menu",
     "tagline": "Bakery · Pastry · Coffee",
     "description": "Our menu, section by section — tap a category to view it.",
-    "ogDescription": "The complete PomaRosa menu in Cartagena. Artisan bakery, coffee, cold drinks, breakfasts, omelettes, combos, healthy options, waffles, pizza, pastry and La Divisa.",
-    "metaDescription": "PomaRosa menu in Cartagena. Explore our sections: café, cold drinks, breakfasts, combos, pastry, La Divisa and more. Cl. 70 #3-63."
+    "ogDescription": "The complete PomaRosa menu in Cartagena. Artisan bakery, coffee, cold drinks, breakfasts, omelettes, combos, healthy options, waffles, pizza, pastry and La Divisa | Coffee.",
+    "metaDescription": "PomaRosa menu in Cartagena. Explore our sections: café, cold drinks, breakfasts, combos, pastry, La Divisa | Coffee and more. Cl. 70 #3-63."
   },
   "Footer": {
     "whatsapp": "WhatsApp",
@@ -44,7 +44,7 @@
     "pizza": "Pizza",
     "panaderia": "Bakery",
     "pasteleria": "Pastry",
-    "laDivisa": "La Divisa"
+    "laDivisa": "La Divisa | Coffee"
   },
   "SectionSEO": {
     "cafeteria": "Enjoy our coffee, chocolate, oatmeal and cappuccino at PomaRosa. Artisan bakery in Cartagena.",
@@ -57,7 +57,7 @@
     "pizza": "Artisan personal pizzas at PomaRosa. Bakery and coffee in Cartagena.",
     "panaderia": "Artisan bread, cookies, cakes and brioche at PomaRosa. Artisan bakery in Cartagena.",
     "pasteleria": "Flans, cheesecakes, cakes and tres leches at PomaRosa. Artisan pastry in Cartagena.",
-    "laDivisa": "Traditional and special bread from La Divisa at PomaRosa. Artisan bakery in Cartagena."
+    "laDivisa": "Traditional and special bread from La Divisa | Coffee at PomaRosa. Artisan bakery in Cartagena."
   },
   "Tagline": {
     "combos": "From 7:00am to 12:00pm every day",

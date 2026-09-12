@@ -25,7 +25,7 @@ export function LaDivisaView() {
     <article className="mx-auto w-full max-w-2xl px-5 pb-16 pt-6 animate-fade-in-up">
       <header className="text-center">
         <h1 className="font-display text-5xl font-black tracking-wide text-menu-green sm:text-6xl">
-          {isEn ? "La Divisa" : "La Divisa"}
+          {isEn ? "La Divisa | Coffee" : "La Divisa | Café"}
         </h1>
         <div className="mt-3 flex items-center justify-center gap-3 py-2">
           <span className="h-px flex-1 bg-menu-green/15" />
@@ -37,7 +37,10 @@ export function LaDivisaView() {
       <div className="mt-6 rounded-2xl border border-sage p-5 pt-4">
         <ul className="divide-y divide-cocoa/10">
           {LA_DIVISA_ITEMS.map((item) => (
-            <li key={item.name} className="flex items-center justify-between gap-4 py-3">
+            <li
+              key={item.name}
+              className="flex items-center justify-between gap-4 py-3"
+            >
               <span className="text-xl leading-snug text-cocoa">
                 {isEn ? item.name_en : item.name}
               </span>

@@ -33,7 +33,7 @@ export async function generateMetadata({
           url: "https://pomarosa.com/logo.webp",
           width: 1200,
           height: 1200,
-          alt: "PomaRosa La Divisa",
+          alt: "PomaRosa La Divisa | Coffee",
         },
       ],
     },
