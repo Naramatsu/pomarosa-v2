@@ -315,6 +315,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "Crispy bacon with lettuce, fresh tomato and house mayonnaise, on ciabatta bread",
             price: "$ 26.000",
+            image: "sanduchebtl.jpeg",
           },
           {
             name: "Club Sándwich",
@@ -407,6 +408,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "Chicken breast omelette with tomato and onion, filled with mozzarella cheese. Served with artisan bread and butter",
             price: "$ 29.900",
+            image: "huevosgranjeros.jpeg",
           },
         ],
       },
@@ -516,6 +518,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "Rolled oats cooked with water or milk, cinnamon, fresh sliced banana and chia seeds",
             price: "$ 15.500",
+            image: "bowlavenaybanano.jpeg",
           },
           {
             name: "Plato de Fruta",
@@ -553,6 +556,7 @@ export const MENU_SECTIONS: MenuSection[] = [
             description_en:
               "Scrambled eggs with spinach, fresh sliced avocado and yuca dough waffles, honey or sour cream",
             price: "$ 33.500",
+            image: "waffleyuca.jpeg",
           },
         ],
       },

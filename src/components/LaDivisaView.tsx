@@ -1,5 +1,6 @@
 import { LA_DIVISA_ITEMS } from "@/data/la-divisa";
 import { useLocale } from "next-intl";
+import { MenuImage } from "./MenuImage";
 
 function LeafSprig() {
   return (
@@ -36,19 +37,29 @@ export function LaDivisaView() {
 
       <div className="mt-6 rounded-2xl border border-sage p-5 pt-4">
         <ul className="divide-y divide-cocoa/10">
-          {LA_DIVISA_ITEMS.map((item) => (
-            <li
-              key={item.name}
-              className="flex items-center justify-between gap-4 py-3"
-            >
-              <span className="text-xl leading-snug text-cocoa">
-                {isEn ? item.name_en : item.name}
-              </span>
-              <span className="whitespace-nowrap text-lg font-bold tabular-nums text-menu-green">
-                {item.price}
-              </span>
-            </li>
-          ))}
+          {LA_DIVISA_ITEMS.map((item) => {
+            const name = isEn ? item.name_en : item.name;
+            return (
+              <li
+                key={item.name}
+                className="flex items-start gap-3 py-3"
+              >
+                {item.image && <MenuImage src={item.image} alt={name} />}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-xl leading-snug text-cocoa">{name}</span>
+                    <span
+                      aria-hidden="true"
+                      className="mx-1 min-w-4 flex-1 border-b-2 border-dotted border-cocoa/25"
+                    />
+                    <span className="whitespace-nowrap text-lg font-bold tabular-nums text-menu-green">
+                      {item.price}
+                    </span>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </article>
